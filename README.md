@@ -27,13 +27,53 @@ For Mac Terminal, need first go to Preferences -> Profiles -> Keyboard, check "U
 - ⇧ + up:   `\033[1;2A` 
 - ⇧ + down: `\033[1;2B` 
 
-To install, run the following from your terminal: (you may want to backup your
+To install, run the following commands from your terminal: (you may want to backup your
 existing `~/.tmux.conf` first)
 
 ```
 ln -sf ~/.dotfiles/.tmux.conf ~/
 ln -sf ~/.dotfiles/.tmux.conf.local ~/
 ```
+
+### Start tmux when open shell
+
+- Approach 1 (will affect shell script)
+
+> [How can I set my default shell to start up tmux](https://unix.stackexchange.com/questions/43601/how-can-i-set-my-default-shell-to-start-up-tmux) 
+
+Add following content to `~/.bash_profile` or `~/.bashrc` 
+
+```shell
+# keep at most 1 client to main, otherwise create new session
+alias tm='tmux list-clients | grep main &> /dev/null && tmux || tmux new -A -s main'
+# clear all sessions except current
+alias tmcls='tmux kill-session -a'
+# clear all sessions
+alias tmclear='tmcls && tmux kill-session'
+
+# open tmux if available
+if command -v tmux &> /dev/null && [ "$TERMINAL_EMULATOR" != "JetBrains-JediTerm" ] && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  if tmux list-clients | grep "main" &> /dev/null; then
+    exec tmux
+  else
+    exec tmux new -A -s main
+  fi
+fi
+```
+
+> A workaround to read output messages of click-and-run scripts is to append following lines in those scripts:
+>
+> ```shell
+> if [ -n "$TMUX" ]; then
+>   echo
+>   read -n 1 -s -r -p "Press any key to continue..."
+> fi
+> ```
+
+- Approach 2 (won't affect shell script)
+
+Open Settings of Terminal app, go to "Profile" - "Shell", in "Start" section, check "Run command" and type in `tm` .
+
 
 ## NVIM
 > [NvChad](https://nvchad.github.io/) customized config.
