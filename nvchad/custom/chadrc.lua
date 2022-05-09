@@ -4,6 +4,12 @@ local pluginConfs = require "custom.plugins.configs"
 local userPlugins = require "custom.plugins"
 
 
+M.options = {
+    user = function()
+        require("custom.options")
+    end,
+}
+
 M.plugins = {
     options = {
         lspconfig = {
