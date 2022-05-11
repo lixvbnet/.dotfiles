@@ -1,4 +1,7 @@
-local map = require("core.utils").map
+local map = nvchad.map
+
+-- get rid of jk binding
+vim.keymap.del("t", "jk")
 
 -- map("n", "<leader>q", "<cmd> :q <CR>")
 
