@@ -80,12 +80,9 @@ Open Settings of Terminal app, go to "Profile" - "Shell", in "Start" section, ch
 
 Install
 ```shell
-# install NvChad
 git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
-nvim +'hi NormalFloat guibg=#1e222a' +PackerSync
-
-# link custom folder
 ln -sf ~/.dotfiles/nvchad/custom ~/.config/nvim/lua/
+nvim +'hi NormalFloat guibg=#1e222a' +PackerSync
 ```
 
 Uninstall
