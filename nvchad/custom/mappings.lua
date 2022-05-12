@@ -5,8 +5,12 @@ vim.keymap.del("t", "jk")
 
 -- map("n", "<leader>q", "<cmd> :q <CR>")
 
--- Ctrl + q to exit insertion/terminal mode
+-- Ctrl + q as ESC
+map("n", "<C-q>", "<Esc>")
 map("i", "<C-q>", "<Esc>")
+map("o", "<C-q>", "<Esc>")
+map("v", "<C-q>", "<Esc>")
+map("c", "<C-q>", "<C-\\><C-n>")
 map("t", "<C-q>", "<C-\\><C-n>")
 
 -- Ctrl + s to save file
