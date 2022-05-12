@@ -26,6 +26,7 @@ M.plugins = {
 
     override = {
         ["NvChad/nvterm"] = pluginConfs.nvterm,
+        ["hrsh7th/nvim-cmp"] = pluginConfs.cmp,
     },
 
     user = userPlugins,
