@@ -2,6 +2,15 @@
 
 local M = {}
 
+M.telescope = {
+   defaults = {
+      mappings = {
+         i = { ["<C-q>"] = require("telescope.actions").close },  -- fix mapping conflict
+      },
+   }
+}
+
+
 -- M.nvterm = {
 --     mappings = {
 --         toggle = {
@@ -16,20 +25,14 @@ local M = {}
 --      },
 -- }
 
+
 local present, cmp = pcall(require, "cmp")
 if not present then
    return M
 end
 M.cmp = {
     mapping = {
-      --   ["<Tab>"] = cmp.mapping.confirm {
-      --       behavior = cmp.ConfirmBehavior.Replace,
-      --       select = true,
-      --   },
-      --   ["<S-Tab>"] = cmp.mapping.confirm {
-      --       behavior = cmp.ConfirmBehavior.Replace,
-      --       select = true,
-      --   },
+        -- allow select items with Up/Down
         ["<Down>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                cmp.select_next_item()
