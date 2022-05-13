@@ -4,7 +4,10 @@ cd
 git clone https://github.com/lixvbnet/.dotfiles.git
 ```
 
+
+
 ## TMUX
+
 > [gpakosz/.tmux](https://github.com/gpakosz/.tmux) with customized config.
 
 To access system clipboard, need to:
@@ -75,7 +78,9 @@ fi
 Open Settings of Terminal app, go to "Profile" - "Shell", in "Start" section, check "Run command" and type in `tm` .
 
 
+
 ## NVIM
+
 > [fork of NvChad](https://github.com/lixvbnet/NvChad), with customized config.
 
 Install
@@ -99,3 +104,24 @@ rm -rf ~/.config/nvim
 rm -rf ~/.local/share/nvim
 rm -rf ~/.cache/nvim
 ```
+
+Structure of `custom` folder:
+
+```shell
+├── chadrc.lua
+├── init.lua
+├── mappings.lua
+├── options.lua
+└── plugins
+    ├── configs.lua
+    ├── init.lua
+    └── lspconfig.lua
+```
+
+> - Override some part of default config of a plugin
+>
+> Add plugin name to `M.plugins.override` in `chadrc.lua` , then put config in `plugins/configs.lua` 
+>
+> - Completely Replace default config of a plugin
+>
+> It is already configured `M.plugins.user` in `chadrc.lua`, so just put config in `plugins/init.lua` 
