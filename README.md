@@ -76,17 +76,21 @@ Open Settings of Terminal app, go to "Profile" - "Shell", in "Start" section, ch
 
 
 ## NVIM
-> [NvChad](https://nvchad.github.io/) customized config.
+> [fork of NvChad](https://github.com/lixvbnet/NvChad), with customized config.
 
 Install
 ```shell
-git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
+git clone https://github.com/lixvbnet/NvChad ~/.config/nvim
 ln -sf ~/.dotfiles/nvchad/custom ~/.config/nvim/lua/
 nvim +'hi NormalFloat guibg=#1e222a' +PackerSync
 ```
 
 Uninstall
 ```shell
+# unlink custom folder
+rm -f ~/.config/nvim/lua/custom
+
+# or remove all
 rm -rf ~/.config/nvim
 rm -rf ~/.local/share/nvim
 rm -rf ~/.cache/nvim

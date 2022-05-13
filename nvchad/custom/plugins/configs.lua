@@ -17,6 +17,9 @@ local M = {}
 -- }
 
 local present, cmp = pcall(require, "cmp")
+if not present then
+   return M
+end
 M.cmp = {
     mapping = {
       --   ["<Tab>"] = cmp.mapping.confirm {

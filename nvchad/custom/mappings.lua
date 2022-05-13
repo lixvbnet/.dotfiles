@@ -3,7 +3,8 @@ local map = nvchad.map
 -- get rid of jk binding
 vim.keymap.del("t", "jk")
 
--- map("n", "<leader>q", "<cmd> :q <CR>")
+-- leader + q to quit
+map("n", "<leader>q", "<cmd> :q <CR>")
 
 -- Ctrl + q as ESC
 map("n", "<C-q>", "<Esc>")
@@ -30,3 +31,6 @@ map("i", "<A-Down>", "<Esc>:m .+1<CR>==gi")
 
 map("n", "<A-Up>", ":m .-2<CR>==")
 map("n", "<A-Down>", ":m .+1<CR>==")
+
+map("v", "<A-Up>", ":move '<-2<CR>gv-gv")
+map("v", "<A-Down>", ":m '>+1<CR>gv-gv")
