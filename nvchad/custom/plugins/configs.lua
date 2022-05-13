@@ -19,14 +19,14 @@ local M = {}
 local present, cmp = pcall(require, "cmp")
 M.cmp = {
     mapping = {
-        ["<Tab>"] = cmp.mapping.confirm {
-            behavior = cmp.ConfirmBehavior.Replace,
-            select = true,
-        },
-        ["<S-Tab>"] = cmp.mapping.confirm {
-            behavior = cmp.ConfirmBehavior.Replace,
-            select = true,
-        },
+      --   ["<Tab>"] = cmp.mapping.confirm {
+      --       behavior = cmp.ConfirmBehavior.Replace,
+      --       select = true,
+      --   },
+      --   ["<S-Tab>"] = cmp.mapping.confirm {
+      --       behavior = cmp.ConfirmBehavior.Replace,
+      --       select = true,
+      --   },
         ["<Down>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                cmp.select_next_item()

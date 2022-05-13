@@ -16,6 +16,9 @@ map("t", "<C-q>", "<C-\\><C-n>")
 -- Ctrl + s to save file
 map("i", "<C-s>", "<Esc>:w<CR>")
 
+-- Shift + Tab to inverse Tab
+-- map("i", "<S-Tab>", "<C-d>")
+
 -- Alt + w to switch between windows
 map("n", "<A-w>", "<C-w>w")
 map("i", "<A-w>", "<Esc> <C-w>w")
