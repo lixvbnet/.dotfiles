@@ -22,4 +22,11 @@ return {
     --        end
     --     end,
     --  },
+
+    ["NvChad/nvterm"] = {
+        commit = "4efafd5",     -- use a specified version (git commit)
+        config = function()
+           require "plugins.configs.nvterm"
+        end,
+     },
 }

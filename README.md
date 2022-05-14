@@ -118,10 +118,10 @@ Structure of `custom` folder:
     └── lspconfig.lua
 ```
 
-> - Override some part of default config of a plugin
+> - Override plugin config
 >
 > Add plugin name to `M.plugins.override` in `chadrc.lua` , then put config in `plugins/configs.lua` 
 >
-> - Completely Replace default config of a plugin
+> - Replace plugin definition (e.g. specify 'commit' to use a history version)
 >
 > It is already configured `M.plugins.user` in `chadrc.lua`, so just put config in `plugins/init.lua` 
