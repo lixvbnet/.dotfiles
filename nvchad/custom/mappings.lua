@@ -7,8 +7,15 @@ vim.keymap.del("t", "jk")
 -- example: map to a function
 -- map("t", "<C-h>", function() require("nvterm.terminal").toggle "horizontal" end)
 
--- TODO: <leader>m to toggle mouse mode
--- map("n", "<leader>m", "")
+-- leader + m to toggle mouse mode
+map("n", "<leader>m", function()
+    local mouse = vim.api.nvim_get_option("mouse")
+    if mouse == "" then
+        vim.api.nvim_set_option("mouse", "a")
+    else
+        vim.api.nvim_set_option("mouse", "")
+    end
+end)
 
 -- toggle theme
 map("n", "<leader>tt", function() require('base46').toggle_theme() end)
