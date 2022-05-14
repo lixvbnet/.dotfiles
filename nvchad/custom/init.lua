@@ -11,4 +11,4 @@ nvchad.close_buffer = function(force)
     force = force or not vim.bo.buflisted or vim.bo.buftype == "nofile"
     local close_cmd = force and ":bd!" or ":bd"
     vim.cmd(close_cmd)
- end
+end

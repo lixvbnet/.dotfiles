@@ -3,14 +3,25 @@ local map = nvchad.map
 -- get rid of jk binding
 vim.keymap.del("t", "jk")
 
+
+-- example: map to a function
+-- map("t", "<C-h>", function() require("nvterm.terminal").toggle "horizontal" end)
+
+-- TODO: <leader>m to toggle mouse mode
+-- map("n", "<leader>m", "")
+
+-- toggle theme
+map("n", "<leader>tt", function() require('base46').toggle_theme() end)
+
+-- TODO: remap insert mode navigation C-hjkl
+-- map Ctrl + k to delete to line end
+-- map("i", "<C-k>", "<Esc>Da")
+
 -- leader + q to quit
 map("n", "<leader>q", "<cmd> :q <CR>")
 
 -- Ctrl + q as ESC
-map("n", "<C-q>", "<Esc>")
-map("i", "<C-q>", "<Esc>")
-map("o", "<C-q>", "<Esc>")
-map("v", "<C-q>", "<Esc>")
+map({"n", "i", "o", "v", "s"}, "<C-q>", "<Esc>")
 map("c", "<C-q>", "<C-\\><C-n>")
 map("t", "<C-q>", "<C-\\><C-n>")
 
