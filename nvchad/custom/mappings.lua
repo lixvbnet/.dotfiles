@@ -20,10 +20,6 @@ end)
 -- toggle theme
 map("n", "<leader>tt", function() require('base46').toggle_theme() end)
 
--- TODO: remap insert mode navigation C-hjkl
--- map Ctrl + k to delete to line end
--- map("i", "<C-k>", "<Esc>Da")
-
 -- leader + q to quit
 map("n", "<leader>q", "<cmd> :q <CR>")
 
@@ -37,6 +33,12 @@ map("i", "<C-s>", "<Esc>:w<CR>")
 
 -- Shift + Tab to inverse Tab
 -- map("i", "<S-Tab>", "<C-d>")
+
+-- better indenting
+map("v", ">", ">gv")
+map("v", "<", "<gv")
+map("v", "<Tab>", ">gv")
+map("v", "<S-Tab>", "<gv")
 
 -- Alt + w to switch between windows
 map("n", "<A-w>", "<C-w>w")
