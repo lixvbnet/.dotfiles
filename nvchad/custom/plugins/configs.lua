@@ -33,6 +33,10 @@ local present, cmp = pcall(require, "cmp")
 if present then
    M.cmp = {
       mapping = {
+          ["<CR>"] = cmp.mapping.confirm {
+              behavior = cmp.ConfirmBehavior.Insert,
+              select = true,
+          },
           -- allow select items with Up/Down
           ["<Down>"] = cmp.mapping(function(fallback)
               if cmp.visible() then
