@@ -55,7 +55,11 @@ alias tmcls='tmux kill-session -a'
 alias tmclear='tmcls && tmux kill-session'
 
 # open tmux if available
-if command -v tmux &> /dev/null && [ "$TERMINAL_EMULATOR" != "JetBrains-JediTerm" ] && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+if command -v tmux &> /dev/null \
+  && [ "$TERMINAL_EMULATOR" != "JetBrains-JediTerm" ] \
+  && [ -z "$VSCODE_CWD" ] && [ "$TERM_PROGRAM" != "vscode" ] \
+  && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  # env > ~/env.txt
   if tmux list-clients | grep "main" &> /dev/null; then
     exec tmux
   else
