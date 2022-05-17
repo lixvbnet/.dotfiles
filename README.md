@@ -81,43 +81,18 @@ Open Settings of Terminal app, go to "Profile" - "Shell", in "Start" section, ch
 
 ## NVIM
 
-> [fork of NvChad](https://github.com/lixvbnet/NvChad), with customized config.
+> [NvChad](https://NvChad.github.io), with customized config.
 
 Install
 ```shell
-git clone https://github.com/lixvbnet/NvChad ~/.config/nvim
-ln -sf ~/.dotfiles/nvchad/custom ~/.config/nvim/lua/
+ln -sf ~/.dotfiles/nvim ~/.config/
 nvim +'hi NormalFloat guibg=#1e222a' +PackerSync
 ```
 
 Uninstall
 ```shell
-# unlink custom folder
-rm -f ~/.config/nvim/lua/custom
-
-# or remove all
+rm -rf ~/.config/nvim/plugin
 rm -rf ~/.config/nvim
 rm -rf ~/.local/share/nvim
 rm -rf ~/.cache/nvim
 ```
-
-Structure of `custom` folder:
-
-```shell
-├── chadrc.lua
-├── init.lua
-├── mappings.lua
-├── options.lua
-└── plugins
-    ├── configs.lua
-    ├── init.lua
-    └── lspconfig.lua
-```
-
-> - Override plugin config
->
-> Add plugin name to `M.plugins.override` in `chadrc.lua` , then put config in `plugins/configs.lua` 
->
-> - Replace plugin definition (e.g. specify 'commit' to use a history version)
->
-> It is already configured `M.plugins.user` in `chadrc.lua`, so just put config in `plugins/init.lua` 
