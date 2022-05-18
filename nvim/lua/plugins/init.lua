@@ -174,7 +174,7 @@ local plugins = {
    },
 
    ["L3MON4D3/LuaSnip"] = {
-      commit = V.luasnip,
+      commit = V.LuaSnip,
       wants = "friendly-snippets",
       after = "nvim-cmp",
       config = function()
