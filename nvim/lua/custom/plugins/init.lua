@@ -19,5 +19,11 @@ return {
     -- ["NvChad/nvterm"] = {
     --     commit = "4efafd5",     -- use a specified version (git commit)
     -- },
+
+    ["feline-nvim/feline.nvim"] = {
+        config = function()
+          require "custom.plugins.statusline"
+        end
+    }
     
 }
