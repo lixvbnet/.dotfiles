@@ -11,9 +11,9 @@ M.options = {
 }
 
 M.plugins = {
-    remove = {
-        "max397574/better-escape.nvim",
-    },
+    -- remove = {
+    --     "max397574/better-escape.nvim",
+    -- },
     options = {
         lspconfig = {
            setup_lspconf = "custom.plugins.lspconfig",

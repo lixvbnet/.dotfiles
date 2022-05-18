@@ -88,6 +88,14 @@ Open Settings of Terminal app, go to "Profile" - "Shell", in "Start" section, ch
 > [NvChad](https://NvChad.github.io), with customized config.
 
 Install
+
+> Must have  `g++` and `go` in PATH for installing some plugins as well as gopls LSP.
+>
+> ```shell
+> # CentOS 8
+> yum install -y gcc-c++ go-toolset
+> ```
+
 ```shell
 ln -sf ~/.dotfiles/nvim ~/.config/
 nvim +'hi NormalFloat guibg=#1e222a' +PackerSync

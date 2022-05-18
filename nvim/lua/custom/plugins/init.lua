@@ -1,4 +1,4 @@
--- install new plugins, or replace default config of existing plugins
+-- install new plugins, or override default plugin definitions
 
 return {
     -- install new plugins
@@ -10,37 +10,14 @@ return {
     -- },
 
 
-    -- replace default config of existing plugins
+    -- override default plugin definitions
     -- ["NvChad/base46"] = {
-    --     commit = "ef1ae11",     -- use a specified version (git commit)
-    --     after = "packer.nvim",
-    --     config = function()
-    --        local ok, base46 = pcall(require, "base46")
-  
-    --        if ok then
-    --           base46.load_theme()
-    --        end
-    --     end,
-    --  },
-
-    ["NvChad/base46"] = {
-       commit = "2e925ef",      -- use a specified version (git commit)
-       after = "packer.nvim",
-       config = function()
-          local ok, base46 = pcall(require, "base46")
-
-          if ok then
-             base46.load_theme()
-          end
-      end,
-    },
+    --    commit = "ad78b9f",      -- use a specified version (git commit)
+    -- },
 
 
-    ["NvChad/nvterm"] = {
-        commit = "4efafd5",     -- use a specified version (git commit)
-        config = function()
-           require "plugins.configs.nvterm"
-        end,
-    },
+    -- ["NvChad/nvterm"] = {
+    --     commit = "4efafd5",     -- use a specified version (git commit)
+    -- },
     
 }

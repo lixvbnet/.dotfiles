@@ -149,13 +149,13 @@ local plugins = {
       end,
    },
 
-   ["max397574/better-escape.nvim"] = {
-      commit = V.better_escape_nvim,
-      event = "InsertCharPre",
-      config = function()
-         require("plugins.configs.others").better_escape()
-      end,
-   },
+   -- ["max397574/better-escape.nvim"] = {
+   --    commit = V.better_escape_nvim,
+   --    event = "InsertCharPre",
+   --    config = function()
+   --       require("plugins.configs.others").better_escape()
+   --    end,
+   -- },
 
    -- load luasnips + cmp related in insert mode only
 

@@ -51,7 +51,7 @@ map("n", "<C-s>", "<cmd> :w <CR>") -- ctrl + s to save file
 -- terminal mappings
 
 -- get out of terminal mode
-map("t", { "jk" }, "<C-\\><C-n>")
+-- map("t", { "jk" }, "<C-\\><C-n>")
 
 -- Add Packer commands because we are not loading it at startup
 
@@ -86,8 +86,8 @@ user_cmd("PackerSync", packer_cmd "sync", {})
 user_cmd("PackerUpdate", packer_cmd "update", {})
 
 -- add NvChadUpdate command and mapping
-cmd "silent! command! NvChadUpdate lua require('nvchad').update_nvchad()"
-map("n", "<leader>uu", "<cmd> :NvChadUpdate <CR>")
+-- cmd "silent! command! NvChadUpdate lua require('nvchad').update_nvchad()"
+-- map("n", "<leader>uu", "<cmd> :NvChadUpdate <CR>")
 
 -- load overriden misc mappings
 nvchad.load_config().mappings.misc()

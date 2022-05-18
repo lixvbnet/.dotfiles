@@ -1,7 +1,7 @@
 local map = nvchad.map
 
 -- get rid of jk binding
-vim.keymap.del("t", "jk")
+-- vim.keymap.del("t", "jk")
 
 
 -- example: map to a function
