@@ -1,0 +1,2 @@
+git_url=https://github.com/NvChad/NvChad.git
+version=4fa0b4a

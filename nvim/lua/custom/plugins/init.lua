@@ -1,29 +1,131 @@
 -- install new plugins, or override default plugin definitions
 
+local V = require "custom.plugins.versions"
+
 return {
-    -- install new plugins
-    -- ["nvim-telescope/telescope-media-files.nvim"] = {
-    --     after = "telescope.nvim",
-    --     config = function()
-    --        require("telescope").load_extension "media_files"
-    --     end,
-    -- },
+   ["nvim-lua/plenary.nvim"] = {
+      commit = V.plenary_nvim,
+   },
+   ["lewis6991/impatient.nvim"] = {
+      commit = V.impatient_nvim,
+   },
 
+   ["wbthomason/packer.nvim"] = {
+      commit = V.packer_nvim,
+   },
 
-    -- override default plugin definitions
-    -- ["NvChad/base46"] = {
-    --    commit = "ad78b9f",      -- use a specified version (git commit)
-    -- },
+   ["NvChad/extensions"] = {
+      commit = V.extensions,
+   },
 
+   ["NvChad/base46"] = {
+      commit = V.base46,
+   },
 
-    -- ["NvChad/nvterm"] = {
-    --     commit = "4efafd5",     -- use a specified version (git commit)
-    -- },
+   ["NvChad/nvterm"] = {
+      commit = V.nvterm,
+   },
 
-    ["feline-nvim/feline.nvim"] = {
-        config = function()
-          require "custom.plugins.statusline"
-        end
-    }
-    
+   ["kyazdani42/nvim-web-devicons"] = {
+      commit = V.nvim_web_devicons,
+   },
+
+   ["feline-nvim/feline.nvim"] = {
+      commit = V.feline_nvim,
+      config = function()
+         require "custom.plugins.statusline"
+      end,
+   },
+
+   ["akinsho/bufferline.nvim"] = {
+      commit = V.bufferline_nvim,
+   },
+
+   ["lukas-reineke/indent-blankline.nvim"] = {
+      commit = V.indent_blankline_nvim,
+   },
+
+   ["NvChad/nvim-colorizer.lua"] = {
+      commit = V.nvim_colorizer_lua,
+   },
+
+   ["nvim-treesitter/nvim-treesitter"] = {
+      commit = V.nvim_treesitter,
+   },
+
+   ["lewis6991/gitsigns.nvim"] = {
+      commit = V.gitsigns_nvim,
+   },
+
+   ["williamboman/nvim-lsp-installer"] = {
+      commit = V.nvim_lsp_installer,
+   },
+
+   ["neovim/nvim-lspconfig"] = {
+      commit = V.nvim_lspconfig,
+   },
+
+   ["ray-x/lsp_signature.nvim"] = {
+      commit = V.lsp_signature_nvim,
+   },
+
+   ["andymass/vim-matchup"] = {
+      commit = V.vim_matchup,
+   },
+
+   -- ["max397574/better-escape.nvim"] = {
+   --    commit = V.better_escape_nvim,
+   -- },
+
+   ["rafamadriz/friendly-snippets"] = {
+      commit = V.friendly_snippets,
+   },
+
+   ["hrsh7th/nvim-cmp"] = {
+      commit = V.nvim_cmp,
+   },
+
+   ["L3MON4D3/LuaSnip"] = {
+      commit = V.LuaSnip,
+   },
+
+   ["saadparwaiz1/cmp_luasnip"] = {
+      commit = V.cmp_luasnip,
+   },
+
+   ["hrsh7th/cmp-nvim-lua"] = {
+      commit = V.cmp_nvim_lua,
+   },
+
+   ["hrsh7th/cmp-nvim-lsp"] = {
+      commit = V.cmp_nvim_lsp,
+   },
+
+   ["hrsh7th/cmp-buffer"] = {
+      commit = V.cmp_buffer,
+   },
+
+   ["hrsh7th/cmp-path"] = {
+      commit = V.cmp_path,
+   },
+
+   ["windwp/nvim-autopairs"] = {
+      commit = V.nvim_autopairs,
+   },
+
+   -- ["goolord/alpha-nvim"] = {
+   --    -- commit = V.alpha_nvim,     -- can't config disabled plugin
+   -- },
+
+   ["numToStr/Comment.nvim"] = {
+      commit = V.Comment_nvim,
+   },
+
+   ["kyazdani42/nvim-tree.lua"] = {
+      commit = V.nvim_tree_lua,
+   },
+
+   ["nvim-telescope/telescope.nvim"] = {
+      commit = V.telescope_nvim,
+   },
 }
