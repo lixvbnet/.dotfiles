@@ -33,4 +33,9 @@ M.plugins = {
     user = userPlugins,
 }
 
+-- keep this setting, so that "change theme" can work correctly
+M.ui = {
+    theme = "onedark",
+}
+
 return M
