@@ -14,40 +14,25 @@ options.icon_styles = {
    default = {
       left = "",
       right = " ",
-      main_icon = " ",
-      vi_mode_icon = "  ",
-      position_icon = " ",
    },
    arrow = {
       left = "",
       right = "",
-      main_icon = " ",
-      vi_mode_icon = " ",
-      position_icon = " ",
    },
 
    block = {
       left = " ",
       right = " ",
-      main_icon = " ",
-      vi_mode_icon = " ",
-      position_icon = "  ",
    },
 
    round = {
       left = "",
       right = "",
-      main_icon = " ",
-      vi_mode_icon = "  ",
-      position_icon = " ",
    },
 
    slant = {
       left = " ",
       right = " ",
-      main_icon = " ",
-      vi_mode_icon = "  ",
-      position_icon = " ",
    },
 }
 
@@ -248,35 +233,27 @@ options.current_line = {
       local current_col = vim.fn.col "."
       local total_line = vim.fn.line "$"
 
-      if current_col < 10 then
-        current_col = " " .. current_col
-      end
+      -- if current_col < 10 then
+      --   current_col = " " .. current_col
+      -- end
 
       if current_line == 1 then
-        return "  " .. current_line .. ":" .. current_col .. "/" .. "Top "
+        return " " .. current_line .. ":" .. current_col .. "/" .. "Top "
       elseif current_line == vim.fn.line "$" then
-         return "  " .. current_line .. ":" .. current_col .. "/" .. "Bot "
+         return " " .. current_line .. ":" .. current_col .. "/" .. "Bot "
       end
       local result, _ = math.modf((current_line / total_line) * 100)
 
-      if result < 10 then
-        result = " " .. result
-      end
+      -- if result < 10 then
+      --   result = " " .. result
+      -- end
 
-      return "  " .. current_line .. ":" .. current_col .. "/" .. result .. "%% "
+      return " " .. current_line .. ":" .. current_col .. "/" .. result .. "%% "
    end,
 
    hl = {
-      fg = options.colors.statusline_bg,
-      bg = options.colors.green,
-   },
-
-   left_sep = {
-      str = options.separator_style.left,
-      hl = {
-         fg = options.colors.green,
-         bg = options.colors.statusline_bg,
-      },
+      fg = options.colors.white,
+      bg = options.colors.lightbg,
    },
 }
 
@@ -305,7 +282,7 @@ options.middle = {}
 options.right = {}
 
 -- left
-add_table(options.left, options.main_icon)
+-- add_table(options.left, options.main_icon)
 add_table(options.left, options.dir_name)
 add_table(options.left, options.git_branch)
 add_table(options.left, options.diff.add)
@@ -321,7 +298,6 @@ add_table(options.right, options.diagnostic.warning)
 add_table(options.right, options.diagnostic.hint)
 add_table(options.right, options.diagnostic.info)
 add_table(options.right, options.lsp_icon)
-add_table(options.right, options.position_icon)
 add_table(options.right, options.current_line)
 
 -- Initialize the components table
