@@ -97,11 +97,6 @@ options.dir_name = {
       fg = options.colors.white,
       bg = options.colors.lightbg,
    },
-
-   right_sep = {
-      str = options.separator_style.right,
-      hl = { fg = options.colors.lightbg, bg = options.colors.lightbg2 },
-   },
 }
 
 options.diff = {
