@@ -3,6 +3,10 @@
 local V = require "custom.plugins.versions"
 
 return {
+   ---------------------- new plugins ----------------------
+
+
+   -------------------- default plugins --------------------
    ["nvim-lua/plenary.nvim"] = {
       commit = V.plenary_nvim,
    },

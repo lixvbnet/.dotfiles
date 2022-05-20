@@ -57,3 +57,6 @@ map("v", "<A-Down>", ":m '>+1<CR>gv-gv")
 
 -- Ctrl + p to find files (Telescope)
 map("n", "<C-p>", "<cmd> :Telescope find_files <CR>")
+-- Alt + f to find text (Telescope)
+map("n", "<A-f>", "<cmd> :Telescope live_grep <CR>")
+
