@@ -54,3 +54,6 @@ map("n", "<A-Down>", ":m .+1<CR>==")
 
 map("v", "<A-Up>", ":move '<-2<CR>gv-gv")
 map("v", "<A-Down>", ":m '>+1<CR>gv-gv")
+
+-- Ctrl + p to find files (Telescope)
+map("n", "<C-p>", "<cmd> :Telescope find_files <CR>")
