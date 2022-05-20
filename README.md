@@ -103,6 +103,8 @@ nvim +'hi NormalFloat guibg=#1e222a' +PackerSync
 
 > Other dependencies:
 >
+> - `ripgrep` (required by telescope live grep)
+>
 > ```shell
 > # Mac
 > brew install ripgrep
@@ -110,6 +112,10 @@ nvim +'hi NormalFloat guibg=#1e222a' +PackerSync
 > yum-config-manager --add-repo=https://copr.fedorainfracloud.org/coprs/carlwgeorge/ripgrep/repo/epel-7/carlwgeorge-ripgrep-epel-7.repo
 > yum install -y ripgrep
 > ```
+>
+> - `stylua` 
+>
+> Download from https://github.com/JohnnyMorganz/StyLua/releases 
 
 
 
