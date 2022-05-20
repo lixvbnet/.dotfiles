@@ -5,6 +5,7 @@ local V = require "custom.plugins.versions"
 return {
    ---------------------- new plugins ----------------------
    ["jose-elias-alvarez/null-ls.nvim"] = {
+      commit = V.null_ls_nvim,
       after = "nvim-lspconfig",
       config = function()
          require("custom.plugins.null-ls").setup()
