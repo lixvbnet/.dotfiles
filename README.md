@@ -101,10 +101,24 @@ ln -sf ~/.dotfiles/nvim ~/.config/
 nvim +'hi NormalFloat guibg=#1e222a' +PackerSync
 ```
 
+> Other dependencies:
+>
+> ```shell
+> # Mac
+> brew install ripgrep
+> # CentOS 8
+> yum-config-manager --add-repo=https://copr.fedorainfracloud.org/coprs/carlwgeorge/ripgrep/repo/epel-7/carlwgeorge-ripgrep-epel-7.repo
+> yum install -y ripgrep
+> ```
+
+
+
 Uninstall
+
 ```shell
 rm -rf ~/.config/nvim/plugin
 rm -rf ~/.config/nvim
 rm -rf ~/.local/share/nvim
 rm -rf ~/.cache/nvim
 ```
+
