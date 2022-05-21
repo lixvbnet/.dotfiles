@@ -27,6 +27,8 @@ M.general = {
 		["<C-e>"] = { "<End>", "壟 end of line" },
 	},
 	n = {
+		["<C-a>"] = { "^", "論 beginning of line" },
+		["<C-e>"] = { "<End>", "壟 end of line" },
 		["<leader>q"] = { "<cmd> :q <CR>" },
 	},
 }
