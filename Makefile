@@ -8,7 +8,7 @@ install_tmux_conf:
 install_nvim_conf: clean_nvim_conf
 	@echo "Installing nvim config..."
 	ln -sf ~/.dotfiles/nvim ~/.config/
-	# nvim +'hi NormalFloat guibg=#1e222a' +PackerSync
+	nvim +'hi NormalFloat guibg=#1e222a' +PackerSync
 
 
 
