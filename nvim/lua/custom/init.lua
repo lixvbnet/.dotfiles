@@ -25,11 +25,11 @@ end
 
 -- leader + m to toggle mouse mode
 map("n", "<leader>m", function()
-   local mouse = vim.api.nvim_get_option("mouse")
+   local mouse = vim.api.nvim_get_option "mouse"
    if mouse == "" then
-       vim.api.nvim_set_option("mouse", "a")
+      vim.api.nvim_set_option("mouse", "a")
    else
-       vim.api.nvim_set_option("mouse", "")
+      vim.api.nvim_set_option("mouse", "")
    end
 end)
 

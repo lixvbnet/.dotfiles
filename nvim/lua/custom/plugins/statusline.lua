@@ -63,7 +63,7 @@ options.separator_style = options.icon_styles[nvchad.load_config().plugins.optio
 
 options.main_icon = {
    provider = function()
-    --   return "   " .. options.mode_colors[vim.fn.mode()][1] .. " "
+      --   return "   " .. options.mode_colors[vim.fn.mode()][1] .. " "
       return "  "
    end,
 
@@ -233,7 +233,7 @@ options.current_line = {
       -- end
 
       if current_line == 1 then
-        return " " .. current_line .. ":" .. current_col .. "/" .. "Top "
+         return " " .. current_line .. ":" .. current_col .. "/" .. "Top "
       elseif current_line == vim.fn.line "$" then
          return " " .. current_line .. ":" .. current_col .. "/" .. "Bot "
       end
@@ -253,15 +253,15 @@ options.current_line = {
 }
 
 options.mouse_mode = {
-    provider = function()
-       local mouse = vim.api.nvim_get_option("mouse")
-       if mouse == "" then
-          return " ⤯ "
-       else
-          return ""
+   provider = function()
+      local mouse = vim.api.nvim_get_option "mouse"
+      if mouse == "" then
+         return " ⤯ "
+      else
+         return ""
       end
-    end,
- }
+   end,
+}
 
 options = nvchad.load_override(options, "feline-nvim/feline.nvim")
 
