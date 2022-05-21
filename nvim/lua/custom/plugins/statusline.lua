@@ -36,29 +36,6 @@ options.icon_styles = {
    },
 }
 
-options.mode_colors = {
-   ["n"] = { "NORMAL", options.colors.red },
-   ["no"] = { "N-PENDING", options.colors.red },
-   ["i"] = { "INSERT", options.colors.dark_purple },
-   ["ic"] = { "INSERT", options.colors.dark_purple },
-   ["t"] = { "TERMINAL", options.colors.green },
-   ["v"] = { "VISUAL", options.colors.cyan },
-   ["V"] = { "V-LINE", options.colors.cyan },
-   [""] = { "V-BLOCK", options.colors.cyan },
-   ["R"] = { "REPLACE", options.colors.orange },
-   ["Rv"] = { "V-REPLACE", options.colors.orange },
-   ["s"] = { "SELECT", options.colors.nord_blue },
-   ["S"] = { "S-LINE", options.colors.nord_blue },
-   [""] = { "S-BLOCK", options.colors.nord_blue },
-   ["c"] = { "COMMAND", options.colors.pink },
-   ["cv"] = { "COMMAND", options.colors.pink },
-   ["ce"] = { "COMMAND", options.colors.pink },
-   ["r"] = { "PROMPT", options.colors.teal },
-   ["rm"] = { "MORE", options.colors.teal },
-   ["r?"] = { "CONFIRM", options.colors.teal },
-   ["!"] = { "SHELL", options.colors.green },
-}
-
 options.separator_style = options.icon_styles[nvchad.load_config().plugins.options.statusline.separator_style]
 
 options.main_icon = {
@@ -67,17 +44,11 @@ options.main_icon = {
       return "  "
    end,
 
-   hl = {
-      fg = options.colors.statusline_bg,
-      bg = options.colors.nord_blue,
-   },
+   hl = "FelineIcon",
 
    right_sep = {
       str = options.separator_style.right,
-      hl = {
-         fg = options.colors.nord_blue,
-         bg = options.colors.lightbg,
-      },
+      hl = "FelineIconSeparator",
    },
 }
 
@@ -93,49 +64,42 @@ options.dir_name = {
       return " " .. icon .. " " .. dir_name .. " "
    end,
 
-   hl = {
-      fg = options.colors.white,
-      bg = options.colors.lightbg,
-   },
+   hl = "FelineDirName",
+   -- hl = {
+   --    fg = options.colors.white,
+   --    bg = options.colors.lightbg2,
+   -- },
 }
+
+--  Git
 
 options.diff = {
    add = {
       provider = "git_diff_added",
-      hl = {
-         fg = options.colors.grey_fg2,
-         bg = options.colors.statusline_bg,
-      },
+      hl = "Feline_diffIcons",
       icon = "  ",
    },
 
    change = {
       provider = "git_diff_changed",
-      hl = {
-         fg = options.colors.grey_fg2,
-         bg = options.colors.statusline_bg,
-      },
+      hl = "Feline_diffIcons",
       icon = "  ",
    },
 
    remove = {
       provider = "git_diff_removed",
-      hl = {
-         fg = options.colors.grey_fg2,
-         bg = options.colors.statusline_bg,
-      },
+      hl = "Feline_diffIcons",
       icon = "  ",
    },
 }
 
 options.git_branch = {
    provider = "git_branch",
-   hl = {
-      fg = options.colors.grey_fg2,
-      bg = options.colors.statusline_bg,
-   },
+   hl = "Feline_diffIcons",
    icon = "  ",
 }
+
+-- lsp
 
 options.diagnostic = {
    error = {
@@ -144,7 +108,7 @@ options.diagnostic = {
          return options.lsp.diagnostics_exist(options.lsp_severity.ERROR)
       end,
 
-      hl = { fg = options.colors.red },
+      hl = "Feline_lspError",
       icon = "  ",
    },
 
@@ -153,7 +117,7 @@ options.diagnostic = {
       enabled = function()
          return options.lsp.diagnostics_exist(options.lsp_severity.WARN)
       end,
-      hl = { fg = options.colors.yellow },
+      hl = "Feline_lspWarning",
       icon = "  ",
    },
 
@@ -162,7 +126,7 @@ options.diagnostic = {
       enabled = function()
          return options.lsp.diagnostics_exist(options.lsp_severity.HINT)
       end,
-      hl = { fg = options.colors.grey_fg2 },
+      hl = "Feline_LspHints",
       icon = "  ",
    },
 
@@ -171,9 +135,20 @@ options.diagnostic = {
       enabled = function()
          return options.lsp.diagnostics_exist(options.lsp_severity.INFO)
       end,
-      hl = { fg = options.colors.green },
+      hl = "Feline_LspInfo",
       icon = "  ",
    },
+}
+
+options.lsp_icon = {
+   provider = function()
+      if next(vim.lsp.buf_get_clients()) ~= nil then
+         return "    LSP "
+      else
+         return " "
+      end
+   end,
+   hl = "Feline_LspIcon",
 }
 
 options.lsp_progress = {
@@ -184,11 +159,7 @@ options.lsp_progress = {
          local msg = Lsp.message or ""
          local percentage = Lsp.percentage or 0
          local title = Lsp.title or ""
-         local spinners = {
-            "",
-            "",
-            "",
-         }
+         local spinners = { "⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏" }
 
          local success_icon = {
             "",
@@ -208,18 +179,7 @@ options.lsp_progress = {
 
       return ""
    end,
-   hl = { fg = options.colors.green },
-}
-
-options.lsp_icon = {
-   provider = function()
-      if next(vim.lsp.buf_get_clients()) ~= nil then
-         return "    LSP "
-      else
-         return " "
-      end
-   end,
-   hl = { fg = options.colors.grey_fg2, bg = options.colors.statusline_bg },
+   hl = "Feline_LspProgress",
 }
 
 options.current_line = {
@@ -246,10 +206,74 @@ options.current_line = {
       return " " .. current_line .. ":" .. current_col .. "/" .. result .. "%% "
    end,
 
-   hl = {
-      fg = options.colors.white,
-      bg = options.colors.lightbg,
-   },
+   hl = "Feline_CurrentLine",
+}
+
+-- MODES
+
+options.mode_colors = {
+   ["n"] = { "NORMAL", "Feline_NormalMode" },
+   ["no"] = { "N-PENDING", "Feline_NormalMode" },
+   ["i"] = { "INSERT", "Feline_InsertMode" },
+   ["ic"] = { "INSERT", "Feline_InsertMode" },
+   ["t"] = { "TERMINAL", "Feline_TerminalMode" },
+   ["v"] = { "VISUAL", "Feline_VisualMode" },
+   ["V"] = { "V-LINE", "Feline_VisualMode" },
+   [""] = { "V-BLOCK", "Feline_VisualMode" },
+   ["R"] = { "REPLACE", "Feline_ReplaceMode" },
+   ["Rv"] = { "V-REPLACE", "Feline_ReplaceMode" },
+   ["s"] = { "SELECT", "Feline_SelectMode" },
+   ["S"] = { "S-LINE", "Feline_SelectMode" },
+   [""] = { "S-BLOCK", "Feline_SelectMode" },
+   ["c"] = { "COMMAND", "Feline_CommandMode" },
+   ["cv"] = { "COMMAND", "Feline_CommandMode" },
+   ["ce"] = { "COMMAND", "Feline_CommandMode" },
+   ["r"] = { "PROMPT", "Feline_ConfirmMode" },
+   ["rm"] = { "MORE", "Feline_ConfirmMode" },
+   ["r?"] = { "CONFIRM", "Feline_ConfirmMode" },
+   ["!"] = { "SHELL", "Feline_TerminalMode" },
+}
+
+options.mode_icon = {
+   provider = options.separator_style.vi_mode_icon,
+
+   hl = function()
+      return {
+         fg = get_color("Feline", "bg#"),
+         bg = get_color(options.mode_colors[vim.fn.mode()][2], "fg#"),
+      }
+   end,
+}
+
+options.mode_name = {
+   provider = function()
+      return " " .. options.mode_colors[vim.fn.mode()][1] .. " "
+   end,
+   hl = function()
+      return options.mode_colors[vim.fn.mode()][2]
+   end,
+}
+
+local fn = vim.fn
+
+local function get_color(group, attr)
+   return fn.synIDattr(fn.synIDtrans(fn.hlID(group)), attr)
+end
+
+options.empty_space = {
+   provider = " " .. options.separator_style.left,
+   hl = "Feline_EmptySpace",
+}
+
+-- this matches the vi mode color
+options.empty_spaceColored = {
+   provider = options.separator_style.left,
+   hl = function()
+      return {
+         fg = get_color(options.mode_colors[vim.fn.mode()][2], "fg#"),
+         bg = get_color("Feline_EmptySpace", "fg#"),
+      }
+   end,
 }
 
 options.mouse_mode = {
@@ -277,7 +301,7 @@ options.middle = {}
 options.right = {}
 
 -- left
--- add_table(options.left, options.main_icon)
+add_table(options.left, options.main_icon)
 add_table(options.left, options.dir_name)
 add_table(options.left, options.git_branch)
 add_table(options.left, options.diff.add)
@@ -303,8 +327,8 @@ options.components.active[2] = options.middle
 options.components.active[3] = options.right
 
 options.theme = {
-   bg = options.colors.statusline_bg,
-   fg = options.colors.fg,
+   fg = get_color("Feline", "fg#"),
+   bg = get_color("Feline", "bg#"),
 }
 
 feline.setup {
