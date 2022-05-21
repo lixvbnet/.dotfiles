@@ -20,3 +20,11 @@ clean_nvim_conf:
 	rm -rf ~/.config/nvim
 	rm -rf ~/.local/share/nvim
 	rm -rf ~/.cache/nvim
+
+
+# =================================== dev ====================================
+NV_DIR = nvim
+NV_ACTIONS = release reset update upgrade
+
+$(NV_ACTIONS):
+	cd $(NV_DIR) && ./build.sh $@
