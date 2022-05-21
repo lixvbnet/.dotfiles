@@ -10,20 +10,6 @@ M.options = {
     end,
 }
 
-M.mappings = {
-    disabled = {
-        i = {
-            ["jk"] = "",
-        },
-        t = {
-            ["jk"] = "",
-        },
-        n = {
-            ["<leader>q"] = "",
-        },
-    },
-}
-
 M.plugins = {
     remove = {
         "max397574/better-escape.nvim",
@@ -52,5 +38,7 @@ M.plugins = {
 M.ui = {
     theme = "onedark",
 }
+
+M.mappings = require "custom.mappings"
 
 return M
