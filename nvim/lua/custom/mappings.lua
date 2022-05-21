@@ -62,3 +62,6 @@ map("n", "<A-f>", "<cmd> :Telescope live_grep <CR>")
 
 -- Shift + f to format code (Also leader + fm)
 map("n", "F", function() vim.lsp.buf.formatting() end)
+
+-- Shift + t to create new buffer (Also Shift + b)
+map("n", "T", "<cmd> enew <CR>")

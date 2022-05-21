@@ -24,6 +24,7 @@ if [ "$action" == "update" ]; then
 
     rm -rf $pwd/init.lua $pwd/lua/core $pwd/lua/plugins
     cp -R init.lua lua $pwd/
+    echo nvchad version: $chad_git_hash
     exit 0
     
 elif [ "$action" == "upgrade" ]; then
@@ -35,6 +36,7 @@ elif [ "$action" == "upgrade" ]; then
     cp -R init.lua lua $pwd/
     chad_git_hash=$(git rev-parse HEAD)
     printf $chad_git_hash > $CHAD_VERSION
+    echo upgraded nvchad to $chad_git_hash
     exit 0
 fi
 

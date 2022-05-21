@@ -1,22 +1,18 @@
-local plugin_settings = nvchad.load_config().plugins
-local present, packer = pcall(require, plugin_settings.options.packer.init_file)
+local present, packer = pcall(require, "plugins.packerInit")
 
 if not present then
    return false
 end
 
 local plugins = {
-   ["nvim-lua/plenary.nvim"] = {
-   },
-   ["lewis6991/impatient.nvim"] = {
-   },
+   ["nvim-lua/plenary.nvim"] = {},
+   ["lewis6991/impatient.nvim"] = {},
 
    ["wbthomason/packer.nvim"] = {
       event = "VimEnter",
    },
 
-   ["NvChad/extensions"] = {
-   },
+   ["NvChad/extensions"] = {},
 
    ["NvChad/base46"] = {
       after = "packer.nvim",
@@ -51,11 +47,6 @@ local plugins = {
 
    ["akinsho/bufferline.nvim"] = {
       after = "nvim-web-devicons",
-
-      setup = function()
-         require("core.mappings").bufferline()
-      end,
-
       config = function()
          require "plugins.configs.bufferline"
       end,
@@ -130,12 +121,12 @@ local plugins = {
       end,
    },
 
-   -- ["max397574/better-escape.nvim"] = {
-   --    event = "InsertCharPre",
-   --    config = function()
-   --       require("plugins.configs.others").better_escape()
-   --    end,
-   -- },
+   ["max397574/better-escape.nvim"] = {
+      event = "InsertCharPre",
+      config = function()
+         require("plugins.configs.others").better_escape()
+      end,
+   },
 
    -- load luasnips + cmp related in insert mode only
 
@@ -197,11 +188,6 @@ local plugins = {
    ["numToStr/Comment.nvim"] = {
       module = "Comment",
       keys = { "gc", "gb" },
-
-      setup = function()
-         require("core.mappings").comment()
-      end,
-
       config = function()
          require("plugins.configs.others").comment()
       end,
@@ -210,10 +196,6 @@ local plugins = {
    -- file managing , picker etc
    ["kyazdani42/nvim-tree.lua"] = {
       cmd = { "NvimTreeToggle", "NvimTreeFocus" },
-      setup = function()
-         require("core.mappings").nvimtree()
-      end,
-
       config = function()
          require "plugins.configs.nvimtree"
       end,
@@ -221,18 +203,24 @@ local plugins = {
 
    ["nvim-telescope/telescope.nvim"] = {
       cmd = "Telescope",
-
-      setup = function()
-         require("core.mappings").telescope()
-      end,
-
       config = function()
          require "plugins.configs.telescope"
+      end,
+   },
+
+   ["folke/which-key.nvim"] = {
+      opt = true,
+      setup = function()
+         nvchad.packer_lazy_load "which-key.nvim"
+      end,
+      config = function()
+         require "plugins.configs.whichkey"
       end,
    },
 }
 
 plugins = nvchad.remove_default_plugins(plugins)
+
 -- merge user plugin table & default plugin table
 plugins = nvchad.plugin_list(plugins)
 

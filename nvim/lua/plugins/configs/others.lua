@@ -18,23 +18,23 @@ M.autopairs = function()
    cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 end
 
--- M.better_escape = function()
---    local present, escape = pcall(require, "better_escape")
+M.better_escape = function()
+   local present, escape = pcall(require, "better_escape")
 
---    if not present then
---       return
---    end
+   if not present then
+      return
+   end
 
---    local options = {
---       mapping = { "jk" }, -- a table with mappings to use
---       timeout = vim.o.timeoutlen,
---       clear_empty_lines = false, -- clear line after escaping if there is only whitespace
---       keys = "<Esc>",
---    }
+   local options = {
+      mapping = { "jk" }, -- a table with mappings to use
+      timeout = vim.o.timeoutlen,
+      clear_empty_lines = false, -- clear line after escaping if there is only whitespace
+      keys = "<Esc>",
+   }
 
---    options = nvchad.load_override(options, "max397574/better-escape.nvim")
---    escape.setup(options)
--- end
+   options = nvchad.load_override(options, "max397574/better-escape.nvim")
+   escape.setup(options)
+end
 
 M.blankline = function()
    local present, blankline = pcall(require, "indent_blankline")
@@ -211,4 +211,19 @@ M.gitsigns = function()
    }
 end
 
+M.misc_mappings = function()
+   local map = nvchad.map
+
+   -- Don't copy the replaced text after pasting in visual mode
+   map("v", "p", '"_dP')
+
+   -- Allow moving the cursor through wrapped lines with j, k, <Up> and <Down>
+   -- http://www.reddit.com/r/vim/comments/2k4cbr/problem_with_gj_and_gk/
+   -- empty mode is same as using :map
+   -- also don't use g[j|k] when in operator pending mode, so it doesn't alter d, y or c behaviour
+   map("", "j", 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', { expr = true })
+   map("", "k", 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', { expr = true })
+   map("", "<Down>", 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', { expr = true })
+   map("", "<Up>", 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', { expr = true })
+end
 return M

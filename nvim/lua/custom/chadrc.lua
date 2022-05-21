@@ -10,10 +10,25 @@ M.options = {
     end,
 }
 
+M.mappings = {
+    disabled = {
+        i = {
+            ["jk"] = "",
+        },
+        t = {
+            ["jk"] = "",
+        },
+        n = {
+            ["<leader>q"] = "",
+        },
+    },
+}
+
 M.plugins = {
-    -- remove = {
-    --     "max397574/better-escape.nvim",
-    -- },
+    remove = {
+        "max397574/better-escape.nvim",
+        "folke/which-key.nvim",
+    },
     options = {
         lspconfig = {
            setup_lspconf = "custom.plugins.lspconfig",

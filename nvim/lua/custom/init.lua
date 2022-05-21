@@ -1,5 +1,8 @@
 require "custom.mappings"
 
+-- disable whichkey
+nvchad.no_WhichKey_map()
+
 -- replace close_buffer function (leader + x)
 nvchad.close_buffer = function(force)
    if vim.bo.buftype == "terminal" then
