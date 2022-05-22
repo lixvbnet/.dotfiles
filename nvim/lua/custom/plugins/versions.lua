@@ -36,5 +36,6 @@ V.extensions                   = 'main'
 V.impatient_nvim               = 'main'
 V.nvterm                       = 'main'
 V.plenary_nvim                 = 'master'
+V.symbols_outline_nvim         = 'master'
 
 return V

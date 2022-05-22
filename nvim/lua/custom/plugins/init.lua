@@ -12,6 +12,13 @@ return {
       end,
    },
 
+   ["simrat39/symbols-outline.nvim"] = {
+      commit = V.symbols_outline_nvim,
+      config = function()
+         require("custom.plugins.symbols-outline")
+      end,
+   },
+
 
    -------------------- default plugins --------------------
    ["nvim-lua/plenary.nvim"] = {
@@ -44,7 +51,7 @@ return {
    ["feline-nvim/feline.nvim"] = {
       commit = V.feline_nvim,
       config = function()
-         require "custom.plugins.statusline"
+         require "custom.plugins.statusline"    -- use custom statusline
       end,
    },
 
