@@ -27,6 +27,7 @@ M.plugins = {
 
    override = {
       ["NvChad/nvterm"] = pluginConfs.nvterm,
+      ["kyazdani42/nvim-tree.lua"] = pluginConfs.nvimtree,
       ["nvim-telescope/telescope.nvim"] = pluginConfs.telescope,
       ["hrsh7th/nvim-cmp"] = pluginConfs.cmp,
    },

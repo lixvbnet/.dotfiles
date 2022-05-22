@@ -16,6 +16,20 @@ local M = {}
 --      },
 -- }
 
+M.nvimtree = {
+   view = {
+      hide_root_folder = true,
+      mappings = {
+         custom_only = false,
+         list = {
+            -- user mappings go here
+            { key = {"<Right>", "l" }, action = "edit", mode = "n"},
+            { key = {"<Left>", "h" }, action = "close_node", mode = "n"},
+         },
+      },
+   },
+}
+
 
 local present, cmp = pcall(require, "cmp")
 if present then
