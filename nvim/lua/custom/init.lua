@@ -36,10 +36,10 @@ end)
 -- toggle theme (already in default mappings)
 -- map("n", "<leader>tt", function() require('base46').toggle_theme() end)
 
--- Ctrl + q as ESC
-map({"n", "i", "o", "v", "s"}, "<C-q>", "<Esc>")
-map("c", "<C-q>", "<C-\\><C-n>")
-map("t", "<C-q>", "<C-\\><C-n>")
+-- Ctrl + q as ESC (can use Ctrl + ] instead)
+-- map({"n", "i", "o", "v", "s"}, "<C-q>", "<Esc>")
+-- map("c", "<C-q>", "<C-\\><C-n>")
+-- map("t", "<C-q>", "<C-\\><C-n>")
 
 -- Ctrl + s to save file
 map("i", "<C-s>", "<Esc>:w<CR>")

@@ -17,18 +17,6 @@ local M = {}
 -- }
 
 
-local present, t_actions = pcall(require, "telescope.actions")
-if present then
-   M.telescope = {
-      defaults = {
-         mappings = {
-            i = { ["<C-q>"] = t_actions.close }, -- fix mapping conflict
-         },
-      },
-   }
-end
-
-
 local present, cmp = pcall(require, "cmp")
 if present then
    M.cmp = {
