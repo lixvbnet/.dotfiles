@@ -30,11 +30,12 @@ M.general = {
    i = {
       ["<C-a>"] = { "<ESC>^i", "論 beginning of line" },
       ["<C-e>"] = { "<End>", "壟 end of line" },
+      ["<C-d>"] = { '<C-o>"_dd', " delete line" },   -- delete line
    },
    n = {
       ["<C-a>"] = { "^", "論 beginning of line" },
       ["<C-e>"] = { "<End>", "壟 end of line" },
-      ["<leader>q"] = { "<cmd> :qa <CR>" },     -- quit all
+      ["<leader>q"] = { "<cmd> :qa <CR>" },           -- quit all
    },
 }
 

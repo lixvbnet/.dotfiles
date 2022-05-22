@@ -43,6 +43,7 @@ end)
 
 -- Ctrl + s to save file
 map("i", "<C-s>", "<Esc>:w<CR>")
+map("v", "<C-s>", "<cmd>:w<CR>")
 
 -- Shift + Tab to inverse Tab (de-tab current line)
 -- map("i", "<S-Tab>", "<C-d>")
