@@ -62,12 +62,18 @@ M.general = {
    },
 }
 
+local function termcodes(str)
+   return vim.api.nvim_replace_termcodes(str, true, true, true)
+end
+
 M.nvterm = {
    i = {
       -- toggle terminal (horizontal)
       ["<C-t>"] = {
          function()
             require("nvterm.terminal").toggle "horizontal"
+            -- when switching to terminal in insert mode, make sure change to terminal mode
+            vim.fn.feedkeys(termcodes('<ESC>i'))
          end,
          "   toggle horizontal term",
       },
