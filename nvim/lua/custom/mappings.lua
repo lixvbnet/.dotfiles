@@ -4,6 +4,7 @@ local M = {}
 M.disabled = {
    i = {
       ["jk"] = "",
+      ["<C-x>"] = "",
       -- disable: go to beginning of line
       ["<C-b>"] = "",
       -- disable: navigate within insert mode
@@ -47,8 +48,9 @@ M.general = {
    i = {
       ["<C-a>"] = { "<ESC>^i", "論 beginning of line" },
       ["<C-e>"] = { "<End>", "壟 end of line" },
-      ["<C-d>"] = { '<C-o>"_dd', " delete line" },      -- delete line
-      ["<C-k>"] = { '<C-o>D', "ﲒ delete to line end" },  -- delete to line end
+      ["<C-d>"] = { '<C-o>"_dd', " delete line" },               -- delete line
+      ["<C-j>"] = { '<C-o>d0', "ﲕ delete to beginning of line" }, -- delete to beginning of line
+      ["<C-k>"] = { '<C-o>D' , "ﲖ delete to end of line" },       -- delete to end of line
       ["<C-u>"] = { '<C-o>u', "碑 undo" },                -- undo
       ["<C-r>"] = { '<C-o><C-r>', "淚 undo" },            -- redo
    },

@@ -115,7 +115,11 @@ nvim +'hi NormalFloat guibg=#1e222a' +PackerSync
 >
 > - `stylua` 
 >
-> Download from https://github.com/JohnnyMorganz/StyLua/releases 
+> ```shell
+> # Mac
+> brew install stylua
+> # Or Download from https://github.com/JohnnyMorganz/StyLua/releases 
+> ```
 
 
 
