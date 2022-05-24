@@ -59,6 +59,16 @@ map("n", "<A-w>", "<C-w>w")
 map("i", "<A-w>", "<Esc> <C-w>w")
 map("t", "<A-w>", "<C-\\><C-n> <C-w>w")
 
+-- Move current line/block up/down with Alt-k/j
+map("i", "<A-k>", "<Esc>:m .-2<CR>==gi")
+map("i", "<A-j>", "<Esc>:m .+1<CR>==gi")
+
+map("n", "<A-k>", ":m .-2<CR>==")
+map("n", "<A-j>", ":m .+1<CR>==")
+
+map("v", "<A-k>", ":move '<-2<CR>gv-gv")
+map("v", "<A-j>", ":m '>+1<CR>gv-gv")
+
 -- Move current line/block up/down with Alt-Up/Down
 map("i", "<A-Up>", "<Esc>:m .-2<CR>==gi")
 map("i", "<A-Down>", "<Esc>:m .+1<CR>==gi")
