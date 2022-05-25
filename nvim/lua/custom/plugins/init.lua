@@ -73,6 +73,9 @@ return {
 
    ["lewis6991/gitsigns.nvim"] = {
       commit = V.gitsigns_nvim,
+      config = function()
+         require "custom.plugins.gitsigns"    -- use custom gitsigns config
+      end,
    },
 
    ["williamboman/nvim-lsp-installer"] = {
