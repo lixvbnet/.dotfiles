@@ -79,6 +79,16 @@ M.nvterm = {
          end,
          "   toggle horizontal term",
       },
+      -- new terminal in current folder
+      ["<A-t>"] = {
+         function()
+            local cwd = vim.fn.expand('%:p:h')
+            require("nvterm.terminal").new "horizontal"
+            require("nvterm.terminal").send("cd " .. cwd .. "&& clear", "horizontal")
+            vim.fn.feedkeys(termcodes('<ESC>i'))
+         end,
+         "   new horizontal term in current folder",
+      },
    },
    n = {
       -- toggle terminal (horizontal)
@@ -87,6 +97,16 @@ M.nvterm = {
             require("nvterm.terminal").toggle "horizontal"
          end,
          "   toggle horizontal term",
+      },
+      -- new terminal in current folder
+      ["<A-t>"] = {
+         function()
+            local cwd = vim.fn.expand('%:p:h')
+            require("nvterm.terminal").new "horizontal"
+            require("nvterm.terminal").send("cd " .. cwd .. "&& clear", "horizontal")
+            vim.fn.feedkeys(termcodes('<ESC>i'))
+         end,
+         "   new horizontal term in current folder",
       },
    },
    t = {
