@@ -87,6 +87,8 @@ map("n", "<A-f>", "<cmd> :Telescope live_grep <CR>")
 -- Ctrl + y to show outline (Telescope aerial)
 map("i", "<C-y>", "<cmd>Telescope aerial<CR>")
 map("n", "<C-y>", "<cmd>Telescope aerial<CR>")
+-- leader + y to toggle aerial outline
+map("n", "<leader>y", "<cmd>AerialToggle<CR>")
 
 -- Shift + f to format code (Also leader + fm)
 map("n", "F", function() vim.lsp.buf.formatting() end)
