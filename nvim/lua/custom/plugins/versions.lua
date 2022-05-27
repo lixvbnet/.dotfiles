@@ -32,10 +32,10 @@ V.vim_matchup                  = '485e711'
 
 ------ packer/start ------
 
+V.aerial_nvim                  = '498c033'
 V.extensions                   = '063d47a'
 V.impatient_nvim               = 'bcc2250'
 V.nvterm                       = 'bfef0fd'
 V.plenary_nvim                 = '1da13ad'
-V.symbols_outline_nvim         = '15ae99c'
 
 return V

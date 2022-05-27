@@ -12,10 +12,11 @@ return {
       end,
    },
 
-   ["simrat39/symbols-outline.nvim"] = {
-      commit = V.symbols_outline_nvim,
+   ["stevearc/aerial.nvim"] = {
+      commit = V.aerial_nvim,
+      -- after = "nvim-lspconfig",
       config = function()
-         require("custom.plugins.symbols-outline")
+         require("custom.plugins.outline").setup()
       end,
    },
 

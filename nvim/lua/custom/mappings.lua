@@ -126,14 +126,4 @@ M.nvimtree = {
    },
 }
 
-M.outline = {
-   i = {
-      ["<C-y>"] = { "<cmd> :SymbolsOutline <CR><Esc>", "פּ Toggle symbols outline" },
-   },
-   n = {
-      ["<C-y>"] = { "<cmd> :SymbolsOutline <CR>", "פּ Toggle symbols outline" },
-      ["<leader>o"] = { "<cmd> :SymbolsOutline <CR>", "פּ Toggle symbols outline" },
-   },
-}
-
 return M
