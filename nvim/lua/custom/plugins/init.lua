@@ -18,6 +18,10 @@ return {
       config = function()
          require("custom.plugins.outline").setup()
       end,
+      setup = function()
+         nvchad.packer_lazy_load "telescope.nvim"
+         nvchad.packer_lazy_load "aerial.nvim"
+      end,
    },
 
 
