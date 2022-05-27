@@ -84,6 +84,10 @@ map("n", "<C-p>", "<cmd> :Telescope find_files <CR>")
 -- Alt + f to find text (Telescope)
 map("n", "<A-f>", "<cmd> :Telescope live_grep <CR>")
 
+-- Ctrl + y to show outline (Telescope aerial)
+map("i", "<C-y>", "<cmd>Telescope aerial<CR>")
+map("n", "<C-y>", "<cmd>Telescope aerial<CR>")
+
 -- Shift + f to format code (Also leader + fm)
 map("n", "F", function() vim.lsp.buf.formatting() end)
 

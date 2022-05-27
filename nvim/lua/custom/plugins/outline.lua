@@ -39,9 +39,7 @@ M.setup = function()
       close_on_select = true,
 
       on_attach = function(bufnr)
-        -- Open Telescope aerial
-        vim.api.nvim_buf_set_keymap(bufnr, "i", "<C-y>", "<cmd>Telescope aerial<CR>", {})
-        vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-y>", "<cmd>Telescope aerial<CR>", {})
+
       end,
    }
 

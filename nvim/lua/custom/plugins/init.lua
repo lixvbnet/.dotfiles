@@ -14,7 +14,7 @@ return {
 
    ["stevearc/aerial.nvim"] = {
       commit = V.aerial_nvim,
-      -- after = "nvim-lspconfig",
+      after = {"nvim-treesitter", "telescope.nvim"},
       config = function()
          require("custom.plugins.outline").setup()
       end,
