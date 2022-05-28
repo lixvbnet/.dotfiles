@@ -98,7 +98,7 @@ Install
 
 ```shell
 ln -sf ~/.dotfiles/nvim ~/.config/
-nvim +'hi NormalFloat guibg=#1e222a' +PackerSync
+nvim
 ```
 
 > Other dependencies:

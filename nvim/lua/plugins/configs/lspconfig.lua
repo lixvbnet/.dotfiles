@@ -18,9 +18,18 @@ win.default_opts = function(options)
    return opts
 end
 
-function M.on_attach(client, _)
+M.on_attach = function(client, bufnr)
    client.resolved_capabilities.document_formatting = false
    client.resolved_capabilities.document_range_formatting = false
+
+   local options = require("plugins.configs.whichkey").options
+   local lsp_mappings = { nvchad.load_config().mappings.lspconfig }
+
+   lsp_mappings[1]["mode_opts"] = { buffer = bufnr }
+
+   if not nvchad.whichKey_map(lsp_mappings, options) then
+      nvchad.no_WhichKey_map(lsp_mappings)
+   end
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()

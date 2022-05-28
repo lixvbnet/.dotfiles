@@ -17,6 +17,15 @@ M.nvimtree = {
 }
 
 
+M.treesitter = {
+   ensure_installed = {
+      "lua",
+      "vim",
+      "make",
+   },
+}
+
+
 local present, cmp = pcall(require, "cmp")
 if present then
    M.cmp = {

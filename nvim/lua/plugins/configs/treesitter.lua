@@ -8,7 +8,6 @@ local options = {
    ensure_installed = {
       "lua",
       "vim",
-      "make",
    },
    highlight = {
       enable = true,

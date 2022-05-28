@@ -1,10 +1,6 @@
-local present, wk = pcall(require, "which-key")
+local M = {}
 
-if not present then
-   return
-end
-
-local options = {
+M.options = {
 
    -- NOTE : this mode_opts table isnt in the default whichkey config
    --  Its added here so you could configure it in chadrc
@@ -55,27 +51,25 @@ local options = {
    },
 }
 
-local mappings = nvchad.load_config().mappings
-local mapping_groups = { groups = vim.deepcopy(mappings.groups) }
+M.options = nvchad.load_override(M.options, "folke/which-key.nvim")
 
-mappings.disabled = nil
-mappings.groups = nil
+M.setup = function()
+   local present, wk = pcall(require, "which-key")
 
--- register mappings
-local function register_mappings(maps, opts)
-   for mode, opt in pairs(opts.mode_opts) do
-      for _, value in pairs(maps) do
-         if value[mode] then
-            local mode_opts = value["mode_opts"] and vim.tbl_deep_extend("force", opt, value["mode_opts"]) or opt
-            wk.register(value[mode], mode_opts)
-         end
-      end
+   if not present then
+      return
    end
+
+   local mappings = nvchad.load_config().mappings
+   local mapping_groups = { groups = vim.deepcopy(mappings.groups) }
+
+   mappings.disabled = nil
+   mappings.groups = nil
+
+   nvchad.whichKey_map(mappings, M.options)
+   nvchad.whichKey_map(mapping_groups, M.options)
+
+   wk.setup(M.options)
 end
 
-register_mappings(mappings, options)
-register_mappings(mapping_groups, options)
-
-options = nvchad.load_override(options, "folke/which-key.nvim")
-
-wk.setup(options)
+return M
