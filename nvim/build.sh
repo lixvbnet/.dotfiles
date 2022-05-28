@@ -68,7 +68,7 @@ for subdir in $(ls "$PLUGINS_DIR"); do
 
             git_hash=""
             if [ "$action" == "release" ]; then
-                git_hash=$(git rev-parse --short HEAD)
+                git_hash=$(git rev-parse HEAD)
                 printf "%-30s = '%s'\n" "V.${plugin}" "$git_hash" >> $PLUGINS_VERSIONS
             elif [ "$action" == "reset" ]; then
                 # set git_hash to nil so packer will pull latest changes of plugins

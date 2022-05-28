@@ -3,39 +3,39 @@ local V = {}
 
 ------ packer/opt ------
 
-V.Comment_nvim                 = 'cc87c89'
-V.LuaSnip                      = '2076115'
-V.aerial_nvim                  = '95a6f71'
-V.base46                       = '168e5b0'
-V.bufferline_nvim              = '82e3598'
-V.cmp_buffer                   = '12463cf'
-V.cmp_nvim_lsp                 = 'affe808'
-V.cmp_nvim_lua                 = 'd276254'
-V.cmp_path                     = '466b6b8'
-V.cmp_luasnip                  = 'a9de941'
-V.feline_nvim                  = 'fba1aaa'
-V.friendly_snippets            = '974d792'
-V.gitsigns_nvim                = '27aeb2e'
-V.indent_blankline_nvim        = '6177a59'
-V.lsp_signature_nvim           = '9ccee20'
-V.null_ls_nvim                 = 'd995840'
-V.nvim_autopairs               = 'b9cc0a2'
-V.nvim_cmp                     = '033a817'
-V.nvim_colorizer_lua           = '6c8b149'
-V.nvim_lsp_installer           = '338063a'
-V.nvim_lspconfig               = 'b86a37c'
-V.nvim_tree_lua                = '6abc87b'
-V.nvim_treesitter              = '3dea0bb'
-V.nvim_web_devicons            = '8a3ab5e'
-V.packer_nvim                  = '4dedd3b'
-V.telescope_nvim               = 'cd9e6aa'
-V.vim_matchup                  = 'ecf6f16'
+V.Comment_nvim                 = nil
+V.LuaSnip                      = nil
+V.aerial_nvim                  = nil
+V.base46                       = nil
+V.bufferline_nvim              = nil
+V.cmp_buffer                   = nil
+V.cmp_nvim_lsp                 = nil
+V.cmp_nvim_lua                 = nil
+V.cmp_path                     = nil
+V.cmp_luasnip                  = nil
+V.feline_nvim                  = nil
+V.friendly_snippets            = nil
+V.gitsigns_nvim                = nil
+V.indent_blankline_nvim        = nil
+V.lsp_signature_nvim           = nil
+V.null_ls_nvim                 = nil
+V.nvim_autopairs               = nil
+V.nvim_cmp                     = nil
+V.nvim_colorizer_lua           = nil
+V.nvim_lsp_installer           = nil
+V.nvim_lspconfig               = nil
+V.nvim_tree_lua                = nil
+V.nvim_treesitter              = nil
+V.nvim_web_devicons            = nil
+V.telescope_nvim               = nil
+V.vim_matchup                  = nil
 
 ------ packer/start ------
 
-V.extensions                   = 'befbb67'
-V.impatient_nvim               = 'bcc2250'
-V.nvterm                       = 'bfef0fd'
-V.plenary_nvim                 = '1da13ad'
+V.extensions                   = nil
+V.impatient_nvim               = nil
+V.nvterm                       = nil
+V.packer_nvim                  = nil
+V.plenary_nvim                 = nil
 
 return V
