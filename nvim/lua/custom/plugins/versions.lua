@@ -3,39 +3,39 @@ local V = {}
 
 ------ packer/opt ------
 
-V.Comment_nvim                 = 'master'
-V.LuaSnip                      = 'master'
-V.base46                       = 'master'
-V.bufferline_nvim              = 'main'
-V.cmp_buffer                   = 'main'
-V.cmp_nvim_lsp                 = 'main'
-V.cmp_nvim_lua                 = 'main'
-V.cmp_path                     = 'main'
-V.cmp_luasnip                  = 'master'
-V.feline_nvim                  = 'master'
-V.friendly_snippets            = 'main'
-V.gitsigns_nvim                = 'main'
-V.indent_blankline_nvim        = 'master'
-V.lsp_signature_nvim           = 'master'
-V.null_ls_nvim                 = 'main'
-V.nvim_autopairs               = 'master'
-V.nvim_cmp                     = 'main'
-V.nvim_colorizer_lua           = 'master'
-V.nvim_lsp_installer           = 'main'
-V.nvim_lspconfig               = 'master'
-V.nvim_tree_lua                = 'master'
-V.nvim_treesitter              = 'master'
-V.nvim_web_devicons            = 'master'
-V.packer_nvim                  = 'master'
-V.telescope_nvim               = 'master'
-V.vim_matchup                  = 'master'
+V.Comment_nvim                 = nil
+V.LuaSnip                      = nil
+V.aerial_nvim                  = nil
+V.base46                       = nil
+V.bufferline_nvim              = nil
+V.cmp_buffer                   = nil
+V.cmp_nvim_lsp                 = nil
+V.cmp_nvim_lua                 = nil
+V.cmp_path                     = nil
+V.cmp_luasnip                  = nil
+V.feline_nvim                  = nil
+V.friendly_snippets            = nil
+V.gitsigns_nvim                = nil
+V.indent_blankline_nvim        = nil
+V.lsp_signature_nvim           = nil
+V.null_ls_nvim                 = nil
+V.nvim_autopairs               = nil
+V.nvim_cmp                     = nil
+V.nvim_colorizer_lua           = nil
+V.nvim_lsp_installer           = nil
+V.nvim_lspconfig               = nil
+V.nvim_tree_lua                = nil
+V.nvim_treesitter              = nil
+V.nvim_web_devicons            = nil
+V.packer_nvim                  = nil
+V.telescope_nvim               = nil
+V.vim_matchup                  = nil
 
 ------ packer/start ------
 
-V.aerial_nvim                  = 'master'
-V.extensions                   = 'main'
-V.impatient_nvim               = 'main'
-V.nvterm                       = 'main'
-V.plenary_nvim                 = 'master'
+V.extensions                   = nil
+V.impatient_nvim               = nil
+V.nvterm                       = nil
+V.plenary_nvim                 = nil
 
 return V

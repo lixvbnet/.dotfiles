@@ -6,7 +6,7 @@ action=$1
 if [ -z "$action" ]; then
     printf "usage: ./build.sh release|reset|upgrade\n\n"
     printf "%-15s %s\n" "release" "for each plugin, gather current git hash and write to file"
-    printf "%-15s %s\n" "reset"   "for each plugin, reset the hash in file to default branch, usually 'master' or 'main'"
+    printf "%-15s %s\n" "reset"   "for each plugin, reset the hash in file to nil"
     printf "%-15s %s\n" "update"  "update nvchad. download a given version of nvchad as specified in chadversion.txt"
     printf "%-15s %s\n" "upgrade" "upgrade nvchad. download latest version of nvchad and update chaversion.txt"
     exit 1
@@ -61,20 +61,19 @@ for subdir in $(ls "$PLUGINS_DIR"); do
         for plugin in $(ls); do
             d=$PLUGINS_DIR/$subdir/$plugin
             cd $d
-            git_hash=""
-            if [ "$action" == "release" ]; then
-                git_hash=$(git rev-parse --short HEAD)
-            elif [ "$action" == "reset" ]; then
-                # get default branch of current plugin, usually 'master' or 'main'
-                # git_hash=$(git remote show origin | grep "HEAD branch" | awk '{print $3}')    # requires network access
-                git_hash=$(git branch --contains | grep -v -e "HEAD" | sed -e 's/\*//' | xargs)
-            fi
-
+            
             # plugin name: replace special characters
             plugin=${plugin//-/_}
             plugin=${plugin//./_}
-            
-            printf "%-30s = '%s'\n" "V.${plugin//-/_}" "$git_hash" >> $PLUGINS_VERSIONS
+
+            git_hash=""
+            if [ "$action" == "release" ]; then
+                git_hash=$(git rev-parse --short HEAD)
+                printf "%-30s = '%s'\n" "V.${plugin}" "$git_hash" >> $PLUGINS_VERSIONS
+            elif [ "$action" == "reset" ]; then
+                # set git_hash to nil so packer will pull latest changes of plugins
+                printf "%-30s = nil\n" "V.${plugin}" >> $PLUGINS_VERSIONS
+            fi
         done
 	fi
 done
