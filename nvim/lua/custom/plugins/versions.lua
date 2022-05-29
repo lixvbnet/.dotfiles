@@ -3,40 +3,40 @@ local V = {}
 
 ------ packer/opt ------
 
-V.Comment_nvim                 = nil
-V.LuaSnip                      = nil
-V.aerial_nvim                  = nil
-V.base46                       = nil
-V.bufferline_nvim              = nil
-V.cmp_buffer                   = nil
-V.cmp_nvim_lsp                 = nil
-V.cmp_nvim_lua                 = nil
-V.cmp_path                     = nil
-V.cmp_luasnip                  = nil
-V.feline_nvim                  = nil
-V.friendly_snippets            = nil
-V.gitsigns_nvim                = nil
-V.indent_blankline_nvim        = nil
-V.jaq_nvim                     = nil
-V.lsp_signature_nvim           = nil
-V.null_ls_nvim                 = nil
-V.nvim_autopairs               = nil
-V.nvim_cmp                     = nil
-V.nvim_colorizer_lua           = nil
-V.nvim_lsp_installer           = nil
-V.nvim_lspconfig               = nil
-V.nvim_tree_lua                = nil
-V.nvim_treesitter              = nil
-V.nvim_web_devicons            = nil
-V.telescope_nvim               = nil
-V.vim_matchup                  = nil
+V.Comment_nvim                 = 'cc87c897458a16c5187abd915502fd48c9f23532'
+V.LuaSnip                      = '52f4aed58db32a3a03211d31d2b12c0495c45580'
+V.aerial_nvim                  = 'b27d11ef51f03c465eca497e2ca9bebf5806846e'
+V.base46                       = '168e5b08e730c0c98b9d9d1a02ff2df5c709edfe'
+V.bufferline_nvim              = 'e2b1e99deb077bf49f8e167d1320292e66b22477'
+V.cmp_buffer                   = '12463cfcd9b14052f9effccbf1d84caa7a2d57f0'
+V.cmp_nvim_lsp                 = 'affe808a5c56b71630f17aa7c38e15c59fd648a8'
+V.cmp_nvim_lua                 = 'd276254e7198ab7d00f117e88e223b4bd8c02d21'
+V.cmp_path                     = '466b6b8270f7ba89abd59f402c73f63c7331ff6e'
+V.cmp_luasnip                  = 'a9de941bcbda508d0a45d28ae366bb3f08db2e36'
+V.feline_nvim                  = 'fba1aaa74ceb0df222a556c6ca0db8f303fa893e'
+V.friendly_snippets            = '974d79269a5a7f63e973db6a51b081a45750d026'
+V.gitsigns_nvim                = '27aeb2e715c32cbb99aa0b326b31739464b61644'
+V.indent_blankline_nvim        = '6177a59552e35dfb69e1493fd68194e673dc3ee2'
+V.jaq_nvim                     = 'febdee07e6e000fe1c4c1cd50beea6df2eeb46a6'
+V.lsp_signature_nvim           = '9ccee20602a10843e3ea3ebc2536dfdcc6cee9a3'
+V.null_ls_nvim                 = 'd995840c39488d613eadf811a6d15628c1b399a9'
+V.nvim_autopairs               = 'b9cc0a26f3b5610ce772004e1efd452b10b36bc9'
+V.nvim_cmp                     = '033a817ced907c8bcdcbe3355d7ea67446264f4b'
+V.nvim_colorizer_lua           = '6c8b1495c3d2034188cc67c18e2ae5e8343cd504'
+V.nvim_lsp_installer           = '3c21304c3f54caf0c00fab00cf1e4e9c0507b5d1'
+V.nvim_lspconfig               = 'b86a37caf7a4e53e62ba883aef5889b590260de9'
+V.nvim_tree_lua                = '5e900c2f29d1c9cb0dfe85ca2674ebcf7e25452b'
+V.nvim_treesitter              = '8c56988d79f95a9d75b001a0a9e302f7b1c4b384'
+V.nvim_web_devicons            = '8a3ab5eb181b5a10d6ed031f3eeafa1acd2058f9'
+V.telescope_nvim               = '54be102e20ee4acaaa17e9fce8be07fb586630df'
+V.vim_matchup                  = '976ebfe61b407d0a75d87b4a507bf9ae4ffffbaa'
 
 ------ packer/start ------
 
-V.extensions                   = nil
-V.impatient_nvim               = nil
-V.packer_nvim                  = nil
-V.plenary_nvim                 = nil
-V.toggleterm_nvim              = nil
+V.extensions                   = 'befbb67c31788c590c1c74e91596f8cba0e59fb2'
+V.impatient_nvim               = 'bcc22509bdf1c9d9e63e5e44ad00f5fcf581d651'
+V.packer_nvim                  = '4dedd3b08f8c6e3f84afbce0c23b66320cd2a8f2'
+V.plenary_nvim                 = '1da13add868968802157a0234136d5b1fbc34dfe'
+V.toggleterm_nvim              = '443afa9e02a5935be7e3cfc54ed94aae712f5f6c'
 
 return V
