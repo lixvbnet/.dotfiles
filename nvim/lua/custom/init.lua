@@ -20,9 +20,6 @@ end
 -- get rid of jk binding
 -- vim.keymap.del("t", "jk")
 
--- example: map to a function
--- map("t", "<C-h>", function() require("nvterm.terminal").toggle "horizontal" end)
-
 -- leader + m to toggle mouse mode
 map("n", "<leader>m", function()
    local mouse = vim.api.nvim_get_option "mouse"

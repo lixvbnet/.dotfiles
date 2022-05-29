@@ -17,6 +17,7 @@ V.feline_nvim                  = nil
 V.friendly_snippets            = nil
 V.gitsigns_nvim                = nil
 V.indent_blankline_nvim        = nil
+V.jaq_nvim                     = nil
 V.lsp_signature_nvim           = nil
 V.null_ls_nvim                 = nil
 V.nvim_autopairs               = nil
@@ -34,8 +35,6 @@ V.vim_matchup                  = nil
 
 V.extensions                   = nil
 V.impatient_nvim               = nil
-V.jaq_nvim                     = nil
-V.nvterm                       = nil
 V.packer_nvim                  = nil
 V.plenary_nvim                 = nil
 V.toggleterm_nvim              = nil

@@ -68,57 +68,57 @@ local function termcodes(str)
    return vim.api.nvim_replace_termcodes(str, true, true, true)
 end
 
-M.nvterm = {
-   i = {
-      -- toggle terminal (horizontal)
-      ["<C-t>"] = {
-         function()
-            require("nvterm.terminal").toggle "horizontal"
-            -- when switching to terminal in insert mode, make sure change to terminal mode
-            vim.fn.feedkeys(termcodes('<ESC>i'))
-         end,
-         "   toggle horizontal term",
-      },
-      -- new terminal in current folder
-      ["<A-t>"] = {
-         function()
-            local cwd = vim.fn.expand('%:p:h')
-            require("nvterm.terminal").new "horizontal"
-            require("nvterm.terminal").send("cd " .. cwd .. "&& clear", "horizontal")
-            vim.fn.feedkeys(termcodes('<ESC>i'))
-         end,
-         "   new horizontal term in current folder",
-      },
-   },
-   n = {
-      -- toggle terminal (horizontal)
-      ["<C-t>"] = {
-         function()
-            require("nvterm.terminal").toggle "horizontal"
-         end,
-         "   toggle horizontal term",
-      },
-      -- new terminal in current folder
-      ["<A-t>"] = {
-         function()
-            local cwd = vim.fn.expand('%:p:h')
-            require("nvterm.terminal").new "horizontal"
-            require("nvterm.terminal").send("cd " .. cwd .. "&& clear", "horizontal")
-            vim.fn.feedkeys(termcodes('<ESC>i'))
-         end,
-         "   new horizontal term in current folder",
-      },
-   },
-   t = {
-      -- toggle terminal (horizontal)
-      ["<C-t>"] = {
-         function()
-            require("nvterm.terminal").toggle "horizontal"
-         end,
-         "   toggle horizontal term",
-      },
-   },
-}
+-- M.nvterm = {
+--    i = {
+--       -- toggle terminal (horizontal)
+--       ["<C-t>"] = {
+--          function()
+--             require("nvterm.terminal").toggle "horizontal"
+--             -- when switching to terminal in insert mode, make sure change to terminal mode
+--             vim.fn.feedkeys(termcodes('<ESC>i'))
+--          end,
+--          "   toggle horizontal term",
+--       },
+--       -- new terminal in current folder
+--       ["<A-t>"] = {
+--          function()
+--             local cwd = vim.fn.expand('%:p:h')
+--             require("nvterm.terminal").new "horizontal"
+--             require("nvterm.terminal").send("cd " .. cwd .. "&& clear", "horizontal")
+--             vim.fn.feedkeys(termcodes('<ESC>i'))
+--          end,
+--          "   new horizontal term in current folder",
+--       },
+--    },
+--    n = {
+--       -- toggle terminal (horizontal)
+--       ["<C-t>"] = {
+--          function()
+--             require("nvterm.terminal").toggle "horizontal"
+--          end,
+--          "   toggle horizontal term",
+--       },
+--       -- new terminal in current folder
+--       ["<A-t>"] = {
+--          function()
+--             local cwd = vim.fn.expand('%:p:h')
+--             require("nvterm.terminal").new "horizontal"
+--             require("nvterm.terminal").send("cd " .. cwd .. "&& clear", "horizontal")
+--             vim.fn.feedkeys(termcodes('<ESC>i'))
+--          end,
+--          "   new horizontal term in current folder",
+--       },
+--    },
+--    t = {
+--       -- toggle terminal (horizontal)
+--       ["<C-t>"] = {
+--          function()
+--             require("nvterm.terminal").toggle "horizontal"
+--          end,
+--          "   toggle horizontal term",
+--       },
+--    },
+-- }
 
 M.nvimtree = {
    i = {

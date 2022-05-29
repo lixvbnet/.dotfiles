@@ -34,6 +34,7 @@ return {
 
    ["lixvbnet/jaq-nvim"] = {
       commit = V.jaq_nvim,
+      after = "toggleterm.nvim",
       config = function()
          require("custom.plugins.jaq").setup()
       end,
@@ -60,9 +61,9 @@ return {
       commit = V.base46,
    },
 
-   ["NvChad/nvterm"] = {
-      commit = V.nvterm,
-   },
+   -- ["NvChad/nvterm"] = {
+   --    commit = V.nvterm,
+   -- },
 
    ["kyazdani42/nvim-web-devicons"] = {
       commit = V.nvim_web_devicons,
