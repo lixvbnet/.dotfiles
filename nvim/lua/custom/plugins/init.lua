@@ -24,7 +24,15 @@ return {
       end,
    },
 
-   ["is0n/jaq-nvim"] = {
+   ["akinsho/toggleterm.nvim"] = {
+      commit = V.toggleterm_nvim,
+      tag = 'v1.*',
+      config = function()
+         require("custom.plugins.toggleterm").setup()
+      end,
+   },
+
+   ["lixvbnet/jaq-nvim"] = {
       commit = V.jaq_nvim,
       config = function()
          require("custom.plugins.jaq").setup()

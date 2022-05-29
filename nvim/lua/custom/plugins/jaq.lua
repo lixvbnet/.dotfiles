@@ -1,7 +1,7 @@
 local jaq = require "jaq-nvim"
 
 local cmds = {
-   default = "float",       -- Default UI
+   default = "toggleterm",       -- Default UI
    external = {
       go = "go run %",
       python = "python3 %",

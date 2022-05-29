@@ -38,5 +38,6 @@ V.jaq_nvim                     = nil
 V.nvterm                       = nil
 V.packer_nvim                  = nil
 V.plenary_nvim                 = nil
+V.toggleterm_nvim              = nil
 
 return V
