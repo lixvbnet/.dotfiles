@@ -34,6 +34,7 @@ V.vim_matchup                  = nil
 
 V.extensions                   = nil
 V.impatient_nvim               = nil
+V.jaq_nvim                     = nil
 V.nvterm                       = nil
 V.packer_nvim                  = nil
 V.plenary_nvim                 = nil

@@ -24,6 +24,13 @@ return {
       end,
    },
 
+   ["is0n/jaq-nvim"] = {
+      commit = V.jaq_nvim,
+      config = function()
+         require("custom.plugins.jaq").setup()
+      end,
+   },
+
 
    -------------------- default plugins --------------------
    ["nvim-lua/plenary.nvim"] = {

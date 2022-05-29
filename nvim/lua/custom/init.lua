@@ -91,6 +91,10 @@ map("n", "<C-y>", "<cmd>Telescope aerial<CR>")
 map("i", "<A-y>", "<cmd>AerialToggle<CR>")
 map("n", "<A-y>", "<cmd>AerialToggle<CR>")
 
+-- Alt + r to run code (Jaq)
+map("i", "<A-r>", "<ESC><cmd>Jaq<CR>")
+map("n", "<A-r>", "<cmd>Jaq<CR>")
+
 -- Shift + f to format code (Also leader + fm)
 map("n", "F", function() vim.lsp.buf.formatting() end)
 
