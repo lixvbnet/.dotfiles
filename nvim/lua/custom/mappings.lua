@@ -68,57 +68,39 @@ local function termcodes(str)
    return vim.api.nvim_replace_termcodes(str, true, true, true)
 end
 
--- M.nvterm = {
---    i = {
---       -- toggle terminal (horizontal)
---       ["<C-t>"] = {
---          function()
---             require("nvterm.terminal").toggle "horizontal"
---             -- when switching to terminal in insert mode, make sure change to terminal mode
---             vim.fn.feedkeys(termcodes('<ESC>i'))
---          end,
---          "   toggle horizontal term",
---       },
---       -- new terminal in current folder
---       ["<A-t>"] = {
---          function()
---             local cwd = vim.fn.expand('%:p:h')
---             require("nvterm.terminal").new "horizontal"
---             require("nvterm.terminal").send("cd " .. cwd .. "&& clear", "horizontal")
---             vim.fn.feedkeys(termcodes('<ESC>i'))
---          end,
---          "   new horizontal term in current folder",
---       },
---    },
---    n = {
---       -- toggle terminal (horizontal)
---       ["<C-t>"] = {
---          function()
---             require("nvterm.terminal").toggle "horizontal"
---          end,
---          "   toggle horizontal term",
---       },
---       -- new terminal in current folder
---       ["<A-t>"] = {
---          function()
---             local cwd = vim.fn.expand('%:p:h')
---             require("nvterm.terminal").new "horizontal"
---             require("nvterm.terminal").send("cd " .. cwd .. "&& clear", "horizontal")
---             vim.fn.feedkeys(termcodes('<ESC>i'))
---          end,
---          "   new horizontal term in current folder",
---       },
---    },
---    t = {
---       -- toggle terminal (horizontal)
---       ["<C-t>"] = {
---          function()
---             require("nvterm.terminal").toggle "horizontal"
---          end,
---          "   toggle horizontal term",
---       },
---    },
--- }
+M.toggleterm = {
+   i = {
+      -- toggle terminal (horizontal)
+      ["<C-t>"] = { "<ESC><cmd> ToggleTerm direction=horizontal <CR>", "   toggle horizontal term" },
+      -- toggle terminal and cd into current folder
+      ["<A-t>"] = {
+         function()
+            local cwd = vim.fn.expand('%:p:h')
+            vim.cmd(string.format('TermExec cmd="" dir="%s" direction="horizontal" go_back=0', cwd, cwd))
+            vim.fn.feedkeys(termcodes('<ESC>i'))   -- when switching to terminal in insert mode, make sure change to terminal mode
+         end,
+         "   toggle horizontal term and cd into current folder",
+      },
+   },
+   n = {
+      -- toggle terminal (horizontal)
+      ["<C-t>"] = { "<cmd> ToggleTerm direction=horizontal <CR>", "   toggle horizontal term" },
+      -- toggle terminal and cd into current folder
+      ["<A-t>"] = {
+         function()
+            local cwd = vim.fn.expand('%:p:h')
+            vim.cmd(string.format('TermExec cmd="" dir="%s" direction="horizontal" go_back=0', cwd, cwd))
+         end,
+         "   toggle horizontal term and cd into current folder",
+      },
+   },
+   t = {
+      -- toggle terminal (horizontal)
+      ["<C-t>"] = { "<cmd> ToggleTerm direction=horizontal <CR>", "   toggle horizontal term" },
+      -- toggle terminal in current folder
+      ["<A-t>"] = { "<cmd> ToggleTerm direction=horizontal <CR>", "   toggle horizontal term" },
+   },
+}
 
 M.nvimtree = {
    i = {
