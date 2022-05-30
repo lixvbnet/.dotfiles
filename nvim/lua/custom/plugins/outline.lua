@@ -8,6 +8,18 @@ M.setup = function()
       -- This can be a filetype map (see :help aerial-filetype-map)
       backends = { "treesitter", "lsp", "markdown" },
 
+      icons = {
+         markdown = {
+            Interface = "I",
+         },
+         make = {
+            Interface = "契",
+         },
+         ["_"] = {
+            -- The underscore key is for any unmatched filetypes
+         },
+      },
+
       -- Enum: persist, close, auto, global
       --   persist - aerial window will stay open until closed
       --   close   - aerial window will close when original file is no longer visible
@@ -38,10 +50,13 @@ M.setup = function()
       -- When true, aerial will automatically close after jumping to a symbol
       close_on_select = true,
 
-      on_attach = function(bufnr)
-
-      end,
+      on_attach = function(bufnr) end,
    }
+
+   vim.cmd([[
+      " customize highlight
+      hi link AerialInterfaceIcon Function
+   ]])
 
    -- integrate aerial into telescope
    require("telescope").load_extension "aerial"

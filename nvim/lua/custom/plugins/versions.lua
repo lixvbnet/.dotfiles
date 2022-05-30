@@ -5,7 +5,7 @@ local V = {}
 
 V.Comment_nvim                 = 'cc87c897458a16c5187abd915502fd48c9f23532'
 V.LuaSnip                      = '52f4aed58db32a3a03211d31d2b12c0495c45580'
-V.aerial_nvim                  = 'b27d11ef51f03c465eca497e2ca9bebf5806846e'
+V.aerial_nvim                  = nil
 V.base46                       = '168e5b08e730c0c98b9d9d1a02ff2df5c709edfe'
 V.bufferline_nvim              = 'e2b1e99deb077bf49f8e167d1320292e66b22477'
 V.cmp_buffer                   = '12463cfcd9b14052f9effccbf1d84caa7a2d57f0'
