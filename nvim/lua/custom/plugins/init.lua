@@ -32,7 +32,7 @@ return {
       end,
    },
 
-   ["lixvbnet/jaq-nvim"] = {
+   ["is0n/jaq-nvim"] = {
       commit = V.jaq_nvim,
       after = "toggleterm.nvim",
       config = function()
