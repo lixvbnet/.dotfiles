@@ -4,40 +4,40 @@ local ChadV = require('custom.chadversion')
 
 ------ packer/opt ------
 
-V.Comment_nvim                 = 'bdf9ca64dcf4cc3c411aaeee4cfba59398d02aa8'
-V.LuaSnip                      = '52f4aed58db32a3a03211d31d2b12c0495c45580'
-V.aerial_nvim                  = 'ece90c4820e7cea7be0aade9d19ef11f53bbc028'
+V.Comment_nvim                 = nil
+V.LuaSnip                      = nil
+V.aerial_nvim                  = nil
 V.base46                       = ChadV.base46
-V.bufferline_nvim              = 'e2b1e99deb077bf49f8e167d1320292e66b22477'
-V.cmp_buffer                   = '12463cfcd9b14052f9effccbf1d84caa7a2d57f0'
-V.cmp_nvim_lsp                 = 'affe808a5c56b71630f17aa7c38e15c59fd648a8'
-V.cmp_nvim_lua                 = 'd276254e7198ab7d00f117e88e223b4bd8c02d21'
-V.cmp_path                     = '466b6b8270f7ba89abd59f402c73f63c7331ff6e'
-V.cmp_luasnip                  = 'a9de941bcbda508d0a45d28ae366bb3f08db2e36'
-V.feline_nvim                  = '1ea42671c523a080a01c62c40c2c8e7fc0139a8f'
-V.friendly_snippets            = '974d79269a5a7f63e973db6a51b081a45750d026'
-V.gitsigns_nvim                = '27aeb2e715c32cbb99aa0b326b31739464b61644'
-V.indent_blankline_nvim        = '6177a59552e35dfb69e1493fd68194e673dc3ee2'
-V.jaq_nvim                     = '62886e6bed12ba21a7a87c3dfb60a38eb63872ce'
-V.lsp_signature_nvim           = '9ccee20602a10843e3ea3ebc2536dfdcc6cee9a3'
-V.null_ls_nvim                 = '7b8560d53045f36d74236d17f0b280ec94e65198'
-V.nvim_autopairs               = 'b9cc0a26f3b5610ce772004e1efd452b10b36bc9'
-V.nvim_cmp                     = '033a817ced907c8bcdcbe3355d7ea67446264f4b'
-V.nvim_colorizer_lua           = '6c8b1495c3d2034188cc67c18e2ae5e8343cd504'
-V.nvim_lsp_installer           = '0071c5fd01e21b15b7e157e25c094332b0028cee'
-V.nvim_lspconfig               = '84252b08b7f9831b0b1329f2a90ff51dd873e58f'
-V.nvim_tree_lua                = 'a0f705995aea34395bc7c4727e136fa4e1c1eb8b'
-V.nvim_treesitter              = '889e901a3ef9b6587bf710daf82b7e1e1b58b0e1'
-V.nvim_web_devicons            = '8d2c5337f0a2d0a17de8e751876eeb192b32310e'
-V.telescope_nvim               = '54be102e20ee4acaaa17e9fce8be07fb586630df'
-V.vim_matchup                  = '976ebfe61b407d0a75d87b4a507bf9ae4ffffbaa'
+V.bufferline_nvim              = nil
+V.cmp_buffer                   = nil
+V.cmp_nvim_lsp                 = nil
+V.cmp_nvim_lua                 = nil
+V.cmp_path                     = nil
+V.cmp_luasnip                  = nil
+V.feline_nvim                  = nil
+V.friendly_snippets            = nil
+V.gitsigns_nvim                = nil
+V.indent_blankline_nvim        = nil
+V.jaq_nvim                     = nil
+V.lsp_signature_nvim           = nil
+V.null_ls_nvim                 = nil
+V.nvim_autopairs               = nil
+V.nvim_cmp                     = nil
+V.nvim_colorizer_lua           = nil
+V.nvim_lsp_installer           = nil
+V.nvim_lspconfig               = nil
+V.nvim_tree_lua                = nil
+V.nvim_treesitter              = nil
+V.nvim_web_devicons            = nil
+V.telescope_nvim               = nil
+V.vim_matchup                  = nil
 
 ------ packer/start ------
 
 V.extensions                   = ChadV.extensions
-V.impatient_nvim               = 'bcc22509bdf1c9d9e63e5e44ad00f5fcf581d651'
-V.packer_nvim                  = '4dedd3b08f8c6e3f84afbce0c23b66320cd2a8f2'
-V.plenary_nvim                 = '1da13add868968802157a0234136d5b1fbc34dfe'
-V.toggleterm_nvim              = '443afa9e02a5935be7e3cfc54ed94aae712f5f6c'
+V.impatient_nvim               = nil
+V.packer_nvim                  = nil
+V.plenary_nvim                 = nil
+V.toggleterm_nvim              = nil
 
 return V
