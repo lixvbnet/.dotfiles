@@ -76,6 +76,23 @@ map("n", "<A-Down>", ":m .+1<CR>==")
 map("v", "<A-Up>", ":move '<-2<CR>gv-gv")
 map("v", "<A-Down>", ":m '>+1<CR>gv-gv")
 
+-- Resize window with Alt-Shift-h/j/k/l
+map("i", "<A-S-h>", "<cmd> vertical resize -2 <CR>")
+map("i", "<A-S-l>", "<cmd> vertical resize +2 <CR>")
+map("i", "<A-S-j>", "<cmd> resize -2 <CR>")
+map("i", "<A-S-k>", "<cmd> resize +2 <CR>")
+
+map("n", "<A-S-h>", "<cmd> vertical resize -2 <CR>")
+map("n", "<A-S-l>", "<cmd> vertical resize +2 <CR>")
+map("n", "<A-S-j>", "<cmd> resize -2 <CR>")
+map("n", "<A-S-k>", "<cmd> resize +2 <CR>")
+
+map("t", "<A-S-h>", "<cmd> vertical resize -2 <CR>")
+map("t", "<A-S-l>", "<cmd> vertical resize +2 <CR>")
+map("t", "<A-S-j>", "<cmd> resize -2 <CR>")
+map("t", "<A-S-k>", "<cmd> resize +2 <CR>")
+
+
 -- Ctrl + p to find files (Telescope)
 map("n", "<C-p>", "<cmd> :Telescope find_files <CR>")
 -- Alt + f to find text (Telescope)
