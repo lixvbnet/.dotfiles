@@ -55,12 +55,14 @@ map("v", "<S-Tab>", "<gv")
 map("n", "<A-w>", "<C-w>w")
 map("i", "<A-w>", "<Esc> <C-w>w")
 map("t", "<A-w>", "<C-\\><C-n> <C-w>w")
+map("t", "<C-w>w", "<C-\\><C-n> <C-w>w")
 
 -- Ctrl + w, h/j/k/l for window navigation
 map("t", "<C-w>h", "<C-\\><C-n> <C-w>h")
 map("t", "<C-w>l", "<C-\\><C-n> <C-w>l")
 map("t", "<C-w>j", "<C-\\><C-n> <C-w>j")
 map("t", "<C-w>k", "<C-\\><C-n> <C-w>k")
+
 
 -- Move current line/block up/down with Alt-k/j
 map("i", "<A-k>", "<Esc>:m .-2<CR>==gi")
