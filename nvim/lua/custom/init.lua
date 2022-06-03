@@ -60,8 +60,8 @@ map("t", "<A-w>", "<C-\\><C-n> <C-w>w")
 map("i", "<A-k>", "<Esc>:m .-2<CR>==gi")
 map("i", "<A-j>", "<Esc>:m .+1<CR>==gi")
 
-map("n", "<A-k>", ":m .-2<CR>==")
-map("n", "<A-j>", ":m .+1<CR>==")
+map("n", "<A-k>", "<cmd> m .-2<CR>==")
+map("n", "<A-j>", "<cmd> m .+1<CR>==")
 
 map("v", "<A-k>", ":move '<-2<CR>gv-gv")
 map("v", "<A-j>", ":m '>+1<CR>gv-gv")
@@ -70,8 +70,8 @@ map("v", "<A-j>", ":m '>+1<CR>gv-gv")
 map("i", "<A-Up>", "<Esc>:m .-2<CR>==gi")
 map("i", "<A-Down>", "<Esc>:m .+1<CR>==gi")
 
-map("n", "<A-Up>", ":m .-2<CR>==")
-map("n", "<A-Down>", ":m .+1<CR>==")
+map("n", "<A-Up>", "<cmd> m .-2<CR>==")
+map("n", "<A-Down>", "<cmd> m .+1<CR>==")
 
 map("v", "<A-Up>", ":move '<-2<CR>gv-gv")
 map("v", "<A-Down>", ":m '>+1<CR>gv-gv")
