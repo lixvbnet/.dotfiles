@@ -92,8 +92,5 @@ map("n", "<A-y>", "<cmd>AerialToggle<CR>")
 map("i", "<A-r>", "<ESC><cmd>Jaq<CR>")
 map("n", "<A-r>", "<cmd>Jaq<CR>")
 
--- Shift + f to format code (Also leader + fm)
-map("n", "F", function() vim.lsp.buf.formatting() end)
-
 -- Shift + t to create new buffer
 map("n", "T", "<cmd> enew <CR>")

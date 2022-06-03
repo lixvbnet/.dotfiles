@@ -33,6 +33,8 @@ M.disabled = {
       ["<A-v>"] = "",
       ["<leader>h"] = "",
       ["<leader>v"] = "",
+      -- disable: pick a hidden nvterm
+      ["<leader>pt"] = "",
    },
    t = {
       ["jk"] = "",
