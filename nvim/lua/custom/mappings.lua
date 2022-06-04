@@ -104,6 +104,12 @@ M.toggleterm = {
          end,
          "   toggle horizontal term and cd into current folder",
       },
+      -- Ctrl + h to show git history
+      ["<C-h>"] = {
+         function()
+            vim.cmd(string.format('TermExec cmd="lazygit && exit" direction="float" go_back=0'))
+         end,
+      },
       -- Alt + h to show git history for current file
       ["<A-h>"] = {
          function()
