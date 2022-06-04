@@ -78,7 +78,7 @@ M.toggleterm = {
       ["<A-t>"] = {
          function()
             local cwd = vim.fn.expand('%:p:h')
-            vim.cmd(string.format('TermExec cmd="" dir="%s" direction="horizontal" go_back=0', cwd, cwd))
+            vim.cmd(string.format('TermExec cmd="cd %s && clear" dir="%s" direction="horizontal" go_back=0', cwd, cwd))
             vim.fn.feedkeys(termcodes('<ESC>i'))   -- when switching to terminal in insert mode, make sure change to terminal mode
          end,
          "   toggle horizontal term and cd into current folder",
@@ -91,7 +91,7 @@ M.toggleterm = {
       ["<A-t>"] = {
          function()
             local cwd = vim.fn.expand('%:p:h')
-            vim.cmd(string.format('TermExec cmd="" dir="%s" direction="horizontal" go_back=0', cwd, cwd))
+            vim.cmd(string.format('TermExec cmd="cd %s && clear" dir="%s" direction="horizontal" go_back=0', cwd, cwd))
          end,
          "   toggle horizontal term and cd into current folder",
       },

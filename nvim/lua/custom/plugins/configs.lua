@@ -2,15 +2,25 @@
 local M = {}
 
 
+-- show git history for current file/folder
+local function show_git_history(node)
+   -- print(node.absolute_path)
+   local cwd = vim.fn.expand('%:p:h')
+   vim.cmd(string.format('TermExec cmd="lazygit -f %s && exit" dir="%s" direction="float" go_back=0', node.absolute_path, cwd, cwd))
+end
+
 M.nvimtree = {
    view = {
       hide_root_folder = true,
       mappings = {
          custom_only = false,
          list = {
-            -- user mappings go here
+            -- Right/Left or l/h to open/close
             { key = {"<Right>", "l" }, action = "edit", mode = "n"},
             { key = {"<Left>", "h" }, action = "close_node", mode = "n"},
+            
+            -- Alt + h to show git history for current file/folder
+            { key = {"<A-h>", "H" }, action = "print_path", action_cb = show_git_history },
          },
       },
    },
