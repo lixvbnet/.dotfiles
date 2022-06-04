@@ -3,18 +3,18 @@
 #   MacOS: ~/Library/Application\ Support/lazygit/config.yml
 #   Windows: %APPDATA%\lazygit\config.yml
 
-gui:
-    theme:
-        lightTheme: false
-        optionsTextColor:
-            - green
-        unstagedChangesColor:
-            - pink
+# gui:
+#     theme:
+#         lightTheme: false
+#         optionsTextColor:
+#             - green
+#         unstagedChangesColor:
+#             - pink
 
 update:
     method: never
 
 # determines whether hitting 'esc' will quit the application when there is nothing to cancel/close
-quitOnTopLevelReturn: false
-disableStartupPopups: false
+# quitOnTopLevelReturn: false
+# disableStartupPopups: false
 notARepository: 'skip'
