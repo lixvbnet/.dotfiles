@@ -88,7 +88,13 @@ M.toggleterm = {
          function()
             local filepath = vim.fn.expand('%')
             local cwd = vim.fn.expand('%:p:h')
-            vim.cmd(string.format('TermExec cmd="lazygit -f %s && exit" dir="%s" direction="float" go_back=0', filepath, cwd))
+            local cmd = ""
+            if filepath == nil or filepath == "" then
+               cmd = "lazygit"
+            else
+               cmd = "lazygit -f " .. filepath
+            end
+            vim.cmd(string.format('TermExec cmd="%s && exit" dir="%s" direction="float" go_back=0', cmd, cwd))
             vim.fn.feedkeys(termcodes('<ESC>i'))
          end,
       },
@@ -115,7 +121,13 @@ M.toggleterm = {
          function()
             local filepath = vim.fn.expand('%')
             local cwd = vim.fn.expand('%:p:h')
-            vim.cmd(string.format('TermExec cmd="lazygit -f %s && exit" dir="%s" direction="float" go_back=0', filepath, cwd))
+            local cmd = ""
+            if filepath == nil or filepath == "" then
+               cmd = "lazygit"
+            else
+               cmd = "lazygit -f " .. filepath
+            end
+            vim.cmd(string.format('TermExec cmd="%s && exit" dir="%s" direction="float" go_back=0', cmd, cwd))
          end,
       },
    },

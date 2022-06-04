@@ -5,8 +5,15 @@ local M = {}
 -- show git history for current file/folder
 local function show_git_history(node)
    -- print(node.absolute_path)
+   local filepath = node.absolute_path
    local cwd = vim.fn.expand('%:p:h')
-   vim.cmd(string.format('TermExec cmd="lazygit -f %s && exit" dir="%s" direction="float" go_back=0', node.absolute_path, cwd, cwd))
+   local cmd = ""
+   if filepath == nil or filepath == "" then
+      cmd = "lazygit"
+   else
+      cmd = "lazygit -f " .. filepath
+   end
+   vim.cmd(string.format('TermExec cmd="%s && exit" dir="%s" direction="float" go_back=0', cmd, cwd))
 end
 
 M.nvimtree = {
