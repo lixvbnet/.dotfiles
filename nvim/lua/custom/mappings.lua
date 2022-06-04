@@ -72,9 +72,9 @@ end
 
 M.toggleterm = {
    i = {
-      -- toggle terminal (horizontal)
+      -- Ctrl + t to toggle terminal (horizontal)
       ["<C-t>"] = { "<ESC><cmd> ToggleTerm direction=horizontal <CR>", "   toggle horizontal term" },
-      -- toggle terminal and cd into current folder
+      -- Alt + t to toggle terminal and cd into current folder
       ["<A-t>"] = {
          function()
             local cwd = vim.fn.expand('%:p:h')
@@ -83,11 +83,20 @@ M.toggleterm = {
          end,
          "   toggle horizontal term and cd into current folder",
       },
+      -- Alt + h to show git history for current file
+      ["<A-h>"] = {
+         function()
+            local filepath = vim.fn.expand('%')
+            local cwd = vim.fn.expand('%:p:h')
+            vim.cmd(string.format('TermExec cmd="lazygit -f %s && exit" dir="%s" direction="float" go_back=0', filepath, cwd))
+            vim.fn.feedkeys(termcodes('<ESC>i'))
+         end,
+      },
    },
    n = {
-      -- toggle terminal (horizontal)
+      -- Ctrl + t to toggle terminal (horizontal)
       ["<C-t>"] = { "<cmd> ToggleTerm direction=horizontal <CR>", "   toggle horizontal term" },
-      -- toggle terminal and cd into current folder
+      -- Alt + t to toggle terminal and cd into current folder
       ["<A-t>"] = {
          function()
             local cwd = vim.fn.expand('%:p:h')
@@ -95,11 +104,19 @@ M.toggleterm = {
          end,
          "   toggle horizontal term and cd into current folder",
       },
+      -- Alt + h to show git history for current file
+      ["<A-h>"] = {
+         function()
+            local filepath = vim.fn.expand('%')
+            local cwd = vim.fn.expand('%:p:h')
+            vim.cmd(string.format('TermExec cmd="lazygit -f %s && exit" dir="%s" direction="float" go_back=0', filepath, cwd))
+         end,
+      },
    },
    t = {
-      -- toggle terminal (horizontal)
+      -- Ctrl + t to toggle terminal (horizontal)
       ["<C-t>"] = { "<cmd> ToggleTerm direction=horizontal <CR>", "   toggle horizontal term" },
-      -- toggle terminal in current folder
+      -- Alt + t to toggle terminal in current folder
       ["<A-t>"] = { "<cmd> ToggleTerm direction=horizontal <CR>", "   toggle horizontal term" },
    },
 }
