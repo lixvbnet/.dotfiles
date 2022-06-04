@@ -83,6 +83,19 @@ Open Settings of Terminal app, go to "Profile" - "Shell", in "Start" section, ch
 
 
 
+## Lazygit
+
+> [lazygit](https://github.com/jesseduffield/lazygit) config.
+
+```shell
+# Mac
+ln -sf ~/.dotfiles/lazygit/config.yml ~/Library/Application\ Support/lazygit/
+# Linux
+ln -sf ~/.dotfiles/lazygit/config.yml ~/.config/lazygit/
+```
+
+
+
 ## NVIM
 
 > [NvChad](https://NvChad.github.io), with customized config.
@@ -119,6 +132,16 @@ nvim
 > # Mac
 > brew install stylua
 > # Or Download from https://github.com/JohnnyMorganz/StyLua/releases 
+> ```
+>
+> - `lazygit` 
+>
+> ```shell
+> # Mac
+> brew install jesseduffield/lazygit/lazygit
+> # Use go install
+> go install github.com/jesseduffield/lazygit@latest
+> # Or Download from https://github.com/jesseduffield/lazygit/releases 
 > ```
 
 
