@@ -32,7 +32,7 @@ end
 
 M.nvimtree = {
    view = {
-      hide_root_folder = true,
+      hide_root_folder = false,
       mappings = {
          custom_only = false,
          list = {
@@ -41,7 +41,7 @@ M.nvimtree = {
             { key = {"<Left>", "h" }, action = "close_node", mode = "n"},
             
             -- Alt + h to show git history for current file/folder
-            { key = {"<A-h>", "H" }, action = "print_path", action_cb = show_git_history },
+            { key = {"<A-h>"}, action = "print_path", action_cb = show_git_history },
          },
       },
    },
