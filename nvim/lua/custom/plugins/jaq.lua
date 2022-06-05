@@ -47,17 +47,17 @@ local ui = {
    terminal = {
       position = "bot",
       line_no = false,
-      size = 10,
+      size = vim.o.lines * 0.3,
    },
 
    toggleterm = {
       position = "horizontal",      -- Position of terminal, one of "vertical" | "horizontal" | "window" | "float"
-      size = 10,
+      size = vim.o.lines * 0.3,
    },
 
    quickfix = {
       position = "bot",             -- Position of quickfix window
-      size = 10,
+      size = vim.o.lines * 0.3,
    },
 }
 
