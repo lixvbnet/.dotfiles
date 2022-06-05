@@ -209,72 +209,11 @@ options.current_line = {
    hl = "Feline_CurrentLine",
 }
 
--- MODES
-
-options.mode_colors = {
-   ["n"] = { "NORMAL", "Feline_NormalMode" },
-   ["no"] = { "N-PENDING", "Feline_NormalMode" },
-   ["i"] = { "INSERT", "Feline_InsertMode" },
-   ["ic"] = { "INSERT", "Feline_InsertMode" },
-   ["t"] = { "TERMINAL", "Feline_TerminalMode" },
-   ["v"] = { "VISUAL", "Feline_VisualMode" },
-   ["V"] = { "V-LINE", "Feline_VisualMode" },
-   [""] = { "V-BLOCK", "Feline_VisualMode" },
-   ["R"] = { "REPLACE", "Feline_ReplaceMode" },
-   ["Rv"] = { "V-REPLACE", "Feline_ReplaceMode" },
-   ["s"] = { "SELECT", "Feline_SelectMode" },
-   ["S"] = { "S-LINE", "Feline_SelectMode" },
-   [""] = { "S-BLOCK", "Feline_SelectMode" },
-   ["c"] = { "COMMAND", "Feline_CommandMode" },
-   ["cv"] = { "COMMAND", "Feline_CommandMode" },
-   ["ce"] = { "COMMAND", "Feline_CommandMode" },
-   ["r"] = { "PROMPT", "Feline_ConfirmMode" },
-   ["rm"] = { "MORE", "Feline_ConfirmMode" },
-   ["r?"] = { "CONFIRM", "Feline_ConfirmMode" },
-   ["!"] = { "SHELL", "Feline_TerminalMode" },
-}
-
-options.mode_icon = {
-   provider = options.separator_style.vi_mode_icon,
-
-   hl = function()
-      return {
-         fg = get_color("Feline", "bg#"),
-         bg = get_color(options.mode_colors[vim.fn.mode()][2], "fg#"),
-      }
-   end,
-}
-
-options.mode_name = {
-   provider = function()
-      return " " .. options.mode_colors[vim.fn.mode()][1] .. " "
-   end,
-   hl = function()
-      return options.mode_colors[vim.fn.mode()][2]
-   end,
-}
-
 local fn = vim.fn
 
 local function get_color(group, attr)
    return fn.synIDattr(fn.synIDtrans(fn.hlID(group)), attr)
 end
-
-options.empty_space = {
-   provider = " " .. options.separator_style.left,
-   hl = "Feline_EmptySpace",
-}
-
--- this matches the vi mode color
-options.empty_spaceColored = {
-   provider = options.separator_style.left,
-   hl = function()
-      return {
-         fg = get_color(options.mode_colors[vim.fn.mode()][2], "fg#"),
-         bg = get_color("Feline_EmptySpace", "fg#"),
-      }
-   end,
-}
 
 options.mouse_mode = {
    provider = function()
@@ -301,7 +240,7 @@ options.middle = {}
 options.right = {}
 
 -- left
-add_table(options.left, options.main_icon)
+-- add_table(options.left, options.main_icon)
 add_table(options.left, options.dir_name)
 add_table(options.left, options.git_branch)
 add_table(options.left, options.diff.add)

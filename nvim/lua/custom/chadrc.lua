@@ -23,7 +23,7 @@ M.plugins = {
       },
 
       statusline = {
-         separator_style = "round",
+         separator_style = "round",    -- default/round/slant/block/arrow
       },
    },
 
