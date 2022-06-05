@@ -28,6 +28,7 @@ M.plugins = {
    },
 
    override = {
+      ["akinsho/bufferline.nvim"] = pluginConfs.bufferline,
       ["kyazdani42/nvim-tree.lua"] = pluginConfs.nvimtree,
       ["nvim-treesitter/nvim-treesitter"] = pluginConfs.treesitter,
       ["hrsh7th/nvim-cmp"] = pluginConfs.cmp,

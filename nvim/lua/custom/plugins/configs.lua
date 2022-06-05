@@ -2,6 +2,20 @@
 local M = {}
 
 
+M.bufferline = {
+   options = {
+      custom_areas = {
+         right = function()
+            -- return {
+            --    { text = "%@Toggle_theme@" .. vim.g.toggle_theme_icon .. "%X" },
+            --    { text = "%@Quit_vim@ %X" },
+            -- }
+         end,
+      },
+   }
+}
+
+
 -- show git history for current file/folder
 local function show_git_history(node)
    -- print(node.absolute_path)
