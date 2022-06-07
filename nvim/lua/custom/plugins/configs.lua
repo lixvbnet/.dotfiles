@@ -45,6 +45,21 @@ M.nvimtree = {
          },
       },
    },
+   update_cwd = true,
+   update_focused_file = {
+      enable = true,
+      update_cwd = false,
+   },
+   actions = {
+      open_file = {
+         resize_window = true,
+      },
+      change_dir = {
+         enable = true,
+         global = false,
+         restrict_above_cwd = true,
+      },
+   },
 }
 
 
