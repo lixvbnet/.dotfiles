@@ -39,15 +39,17 @@ M.nvimtree = {
             -- Right/Left or l/h to open/close
             { key = {"<Right>", "l" }, action = "edit", mode = "n"},
             { key = {"<Left>", "h" }, action = "close_node", mode = "n"},
-            
+
+            -- Alt + n to go back to previous window
+            { key = {"<A-n>"}, action = "go_back", action_cb = function(node) vim.cmd("wincmd p") end},
             -- Alt + h to show git history for current file/folder
             { key = {"<A-h>"}, action = "print_path", action_cb = show_git_history },
          },
       },
    },
-   update_cwd = true,
+   update_cwd = false,
    update_focused_file = {
-      enable = true,
+      enable = false,
       update_cwd = false,
    },
    actions = {
