@@ -12,7 +12,7 @@ nvchad.close_buffer = function(force)
    end
 
    force = force or not vim.bo.buflisted or vim.bo.buftype == "nofile"
-   local close_cmd = force and ":bd!" or ":bd"
+   local close_cmd = force and ":bd!" or ":bp | bd" .. vim.fn.bufnr()
    vim.cmd(close_cmd)
 end
 
