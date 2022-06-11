@@ -12,7 +12,7 @@ M.bufferline = {
             -- }
          end,
       },
-   }
+   },
 }
 
 
@@ -31,7 +31,15 @@ local function show_git_history(node)
 end
 
 M.nvimtree = {
+   auto_reload_on_write = true,
+   create_in_closed_folder = false,
+   reload_on_bufenter = false,
    view = {
+      side = "left",
+      width = 30,
+      adaptive_size = true,
+      centralize_selection = false,
+      preserve_window_proportions = false,
       hide_root_folder = false,
       mappings = {
          custom_only = false,
@@ -47,10 +55,12 @@ M.nvimtree = {
          },
       },
    },
+   root_dirs = { "/usr/local/go/src", "~/go/pkg/mod" },
    update_cwd = false,
    update_focused_file = {
       enable = false,
       update_cwd = false,
+      update_root = true,
    },
    actions = {
       open_file = {
@@ -60,6 +70,52 @@ M.nvimtree = {
          enable = true,
          global = false,
          restrict_above_cwd = true,
+      },
+   },
+   git = {
+      enable = true,
+      ignore = true,
+      timeout = 400,
+   },
+   renderer = {
+      highlight_git = true,
+      icons = {
+         webdev_colors = true,
+         git_placement = "after",
+         padding = " ",
+         symlink_arrow = " ➛ ",
+         show = {
+            file = true,
+            folder = true,
+            folder_arrow = true,
+            git = true,
+         },
+         glyphs = {
+            default = "",
+            symlink = "",
+            folder = {
+               arrow_closed = "",
+               arrow_open = "",
+               default = "",
+               open = "",
+               empty = "",
+               empty_open = "",
+               symlink = "",
+               symlink_open = "",
+            },
+            git = {
+               unstaged = "✗",
+               staged = "✓",
+               unmerged = "",
+               renamed = "➜",
+               -- untracked = "★",
+               -- untracked = "",
+               untracked = "+",
+               -- deleted = "",
+               deleted = "-",
+               ignored = "◌",
+            },
+         },
       },
    },
 }

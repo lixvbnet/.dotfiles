@@ -143,14 +143,14 @@ M.nvimtree = {
    i = {
       -- toggle
       ["<C-n>"] = { "<cmd> :NvimTreeToggle <CR><Esc>", "   toggle nvimtree" },
-      -- focus
-      ["<A-n>"] = { "<cmd> NvimTreeFocus <CR><Esc>", "   focus nvimtree" },
+      -- find file
+      ["<A-n>"] = { "<cmd> NvimTreeFindFile! <CR><Esc>", "   focus nvimtree" },
    },
    n = {
       -- toggle
       ["<C-n>"] = { "<cmd> NvimTreeToggle <CR>", "   toggle nvimtree" },
-      -- focus
-      ["<A-n>"] = { "<cmd> NvimTreeFocus <CR>", "   focus nvimtree" },
+      -- find file
+      ["<A-n>"] = { "<cmd> NvimTreeFindFile! <CR>", "   focus nvimtree" },
    },
 }
 

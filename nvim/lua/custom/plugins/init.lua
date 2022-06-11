@@ -165,6 +165,7 @@ return {
 
    ["kyazdani42/nvim-tree.lua"] = {
       commit = V.nvim_tree_lua,
+      cmd = { "NvimTreeToggle", "NvimTreeFocus", "NvimTreeFindFile" },    -- customize commands
    },
 
    ["nvim-telescope/telescope.nvim"] = {
