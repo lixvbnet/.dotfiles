@@ -7,7 +7,11 @@ git clone https://github.com/lixvbnet/.dotfiles.git
 **Shortcut to install all dotfiles**:
 
 ```shell
-cd ~/.dotfiles && make all
+cd ~/.dotfiles
+# install all dotfiles except nvim config
+make install
+# install nvim config
+make install_nvim_conf
 ```
 
 > This does not include the "Initial Configuration" steps.
@@ -16,6 +20,16 @@ cd ~/.dotfiles && make all
 
 ```shell
 cd ~/.dotfiles && make clean
+```
+
+
+
+## BASH
+
+```shell
+ln -sf ~/.dotfiles/.bashrc ~/
+os=$(uname | awk '{print tolower($0)}')
+ln -sf ~/.dotfiles/.bashrc.${os} ~/
 ```
 
 

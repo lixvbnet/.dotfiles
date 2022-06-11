@@ -1,0 +1,25 @@
+## This file contains OS spefic settings for MacOS
+
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_221.jdk/Contents/Home
+
+
+################# TMUX (SHOULD BE PUT AT LAST) #################
+# keep at most 1 client to main, otherwise create new session
+alias tm='tmux list-clients | grep main &> /dev/null && tmux || tmux new -A -s main'
+# clear all sessions except current
+alias tmcls='tmux kill-session -a'
+# clear all sessions
+alias tmclear='tmcls && tmux kill-session'
+
+# open tmux if available
+if command -v tmux &> /dev/null \
+  && [ "$TERMINAL_EMULATOR" != "JetBrains-JediTerm" ] \
+  && [ -z "$VSCODE_CWD" ] && [ "$TERM_PROGRAM" != "vscode" ] \
+  && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  # env > ~/env.txt
+  if tmux list-clients | grep "main" &> /dev/null; then
+    exec tmux
+  else
+    exec tmux new -A -s main
+  fi
+fi
