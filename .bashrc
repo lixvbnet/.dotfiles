@@ -6,7 +6,6 @@ LANG="en_US.UTF-8"
 
 ############################ ALIAS #############################
 alias cls='clear'
-alias ls='ls -G --color=auto'
 alias ll='ls -l'
 alias la='ls -a'
 alias lla='ls -al'
