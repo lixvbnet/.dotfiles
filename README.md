@@ -8,8 +8,10 @@ git clone https://github.com/lixvbnet/.dotfiles.git
 
 ```shell
 cd ~/.dotfiles
-# install all dotfiles except nvim config
+# install dotfiles
 make install
+# install git config (require root access)
+make install_git_conf
 # install nvim config
 make install_nvim_conf
 ```
@@ -59,6 +61,14 @@ ln -sf ~/.dotfiles/.tmux.conf.local ~/
 ln -sf ~/.dotfiles/lazygit/config.yml ~/Library/Application\ Support/lazygit/
 # Linux
 ln -sf ~/.dotfiles/lazygit/config.yml ~/.config/lazygit/
+```
+
+
+
+## Git config
+
+```shell
+sudo ln -sf ~/.dotfiles/etc/gitconfig /etc/
 ```
 
 

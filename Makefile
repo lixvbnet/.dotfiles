@@ -13,7 +13,6 @@ install_tmux_conf:
 	ln -sf ~/.dotfiles/.tmux.conf ~/
 	ln -sf ~/.dotfiles/.tmux.conf.local ~/
 
-
 LAZYGIT_CONF_DIR_MAC = ~/Library/"Application Support"/lazygit/
 LAZYGIT_CONF_DIR_LINUX = ~/.config/lazygit/
 install_lazygit_conf:
@@ -22,6 +21,9 @@ install_lazygit_conf:
 	@test -d $(LAZYGIT_CONF_DIR_LINUX) && echo $(LAZYGIT_CONF_DIR_LINUX) && ln -sf ~/.dotfiles/lazygit/config.yml $(LAZYGIT_CONF_DIR_LINUX)/ || true
 
 
+install_git_conf:
+	@echo "Installing git config... (require root access)"
+	sudo ln -sf ~/.dotfiles/etc/gitconfig /etc/
 
 
 install_nvim_conf: clean_nvim_conf
