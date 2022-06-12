@@ -1,6 +1,10 @@
 os = $(shell uname | awk '{print tolower($0)}')
 
 
+all: install install_git_conf install_nvim_conf
+
+
+# =================================== dotfiles ===================================
 install: install_bashrc install_tmux_conf install_lazygit_conf
 
 install_bashrc:
@@ -21,11 +25,13 @@ install_lazygit_conf:
 	@test -d $(LAZYGIT_CONF_DIR_LINUX) && echo $(LAZYGIT_CONF_DIR_LINUX) && ln -sf ~/.dotfiles/lazygit/config.yml $(LAZYGIT_CONF_DIR_LINUX)/ || true
 
 
+# ======================== gitconfig (require root access) ========================
 install_git_conf:
 	@echo "Installing git config... (require root access)"
 	sudo ln -sf ~/.dotfiles/etc/gitconfig /etc/
 
 
+# ================================== nvim config ==================================
 install_nvim_conf: clean_nvim_conf
 	@echo "Installing nvim config..."
 	ln -sf ~/.dotfiles/nvim ~/.config/

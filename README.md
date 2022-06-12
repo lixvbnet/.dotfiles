@@ -4,7 +4,14 @@ cd
 git clone https://github.com/lixvbnet/.dotfiles.git
 ```
 
-**Shortcut to install all dotfiles**:
+**Shortcut to install all config files**:
+
+```shell
+cd ~/.dotfiles && make all
+```
+
+or step by step:
+
 
 ```shell
 cd ~/.dotfiles
