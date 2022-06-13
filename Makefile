@@ -1,16 +1,21 @@
 os = $(shell uname | awk '{print tolower($0)}')
+.PHONY: all install clean $(NV_ACTIONS)
 
 
 all: install install_git_conf install_nvim_conf
 
 
 # =================================== dotfiles ===================================
-install: install_bashrc install_tmux_conf install_lazygit_conf
+install: install_bashrc install_vimrc install_tmux_conf install_lazygit_conf
 
 install_bashrc:
-	@@echo "Installing bashrc..."
+	@echo "Installing bashrc..."
 	ln -sf ~/.dotfiles/.bashrc ~/
 	ln -sf ~/.dotfiles/.bashrc.${os} ~/
+
+install_vimrc:
+	@echo "Installing vimrc..."
+	ln -sf ~/.dotfiles/.vimrc ~/
 
 install_tmux_conf:
 	@echo "Installing tmux config..."

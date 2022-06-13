@@ -43,6 +43,14 @@ ln -sf ~/.dotfiles/.bashrc.${os} ~/
 
 
 
+## VIM
+
+```shell
+ln -sf ~/.dotfiles/.vimrc ~/
+```
+
+
+
 ## TMUX
 
 > [gpakosz/.tmux](https://github.com/gpakosz/.tmux) with customized config.
