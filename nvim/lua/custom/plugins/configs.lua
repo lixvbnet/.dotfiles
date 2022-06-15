@@ -60,7 +60,6 @@ M.nvimtree = {
    update_cwd = false,
    update_focused_file = {
       enable = false,
-      update_cwd = false,
       update_root = true,
    },
    actions = {

@@ -25,7 +25,7 @@ make install_nvim_conf
 
 > This does not include the "Initial Configuration" steps.
 
-**Shortcut to remove all dotfiles**:
+**Shortcut to remove (nvim) config files**:
 
 ```shell
 cd ~/.dotfiles && make clean
