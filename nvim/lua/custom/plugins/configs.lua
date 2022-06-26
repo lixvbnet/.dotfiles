@@ -57,7 +57,7 @@ M.nvimtree = {
    },
    root_dirs = { "/usr/local/go/src", "~/go/pkg/mod" },
    prefer_startup_root = true,
-   update_cwd = false,
+   sync_root_with_cwd = false,
    update_focused_file = {
       enable = false,
       update_root = true,
