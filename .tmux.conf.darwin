@@ -1,0 +1,11 @@
+# macOS
+bind -T copy-mode-vi y      send -X copy-pipe-and-cancel pbcopy
+bind -T copy-mode-vi Enter  send -X copy-pipe-and-cancel pbcopy
+bind -T copy-mode-vi D      send -X copy-pipe-end-of-line-and-cancel pbcopy
+bind -T copy-mode-vi C-k    send -X copy-pipe-end-of-line-and-cancel pbcopy
+
+bind -T copy-mode-vi MouseDragEnd1Pane    send-keys -X copy-pipe-and-cancel pbcopy
+bind -T copy-mode-vi DoubleClick1Pane     select-pane \; send-keys -X select-word \; run-shell -d 0.3 \; send-keys -X copy-pipe-and-cancel pbcopy
+bind -T copy-mode-vi TripleClick1Pane     select-pane \; send-keys -X select-line \; run-shell -d 0.3 \; send-keys -X copy-pipe-and-cancel pbcopy
+bind -T root         DoubleClick1Pane     select-pane -t = \; if-shell -F "#{||:#{pane_in_mode},#{mouse_any_flag}}" { send-keys -M } { copy-mode -H ; send-keys -X select-word ; run-shell -d 0.3 ; send-keys -X copy-pipe-and-cancel pbcopy }
+bind -T root         TripleClick1Pane     select-pane -t = \; if-shell -F "#{||:#{pane_in_mode},#{mouse_any_flag}}" { send-keys -M } { copy-mode -H ; send-keys -X select-line ; run-shell -d 0.3 ; send-keys -X copy-pipe-and-cancel pbcopy }
