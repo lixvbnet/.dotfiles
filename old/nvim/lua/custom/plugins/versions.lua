@@ -36,7 +36,7 @@ V.vim_matchup                  = '976ebfe61b407d0a75d87b4a507bf9ae4ffffbaa'
 
 V.extensions                   = ChadV.extensions
 V.impatient_nvim               = '969f2c5c90457612c09cf2a13fee1adaa986d350'
-V.packer_nvim                  = '00ec5adef58c5ff9a07f11f45903b9dbbaa1b422'
+V.packer_nvim                  = '1d0cf98a561f7fd654c970c49f917d74fafe1530'
 V.plenary_nvim                 = '968a4b9afec0c633bc369662e78f8c5db0eba249'
 V.toggleterm_nvim              = '443afa9e02a5935be7e3cfc54ed94aae712f5f6c'
 
