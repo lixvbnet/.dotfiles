@@ -52,19 +52,27 @@ install_lazygit_conf:
 	@test -d $(LAZYGIT_CONF_DIR_MAC) && echo $(LAZYGIT_CONF_DIR_MAC) && ln -sf ~/.dotfiles/lazygit/config.yml $(LAZYGIT_CONF_DIR_MAC)/ || true
 	@test -d $(LAZYGIT_CONF_DIR_LINUX) && echo $(LAZYGIT_CONF_DIR_LINUX) && ln -sf ~/.dotfiles/lazygit/config.yml $(LAZYGIT_CONF_DIR_LINUX)/ || true
 
-install_nvim_conf:
-	@echo "Installing nvim config..."
-	ln -sf ~/.dotfiles/nvim ~/.config/
+# sticking to old conf
+install_nvim_conf: install_nvim_old_conf
+# @echo "Installing nvim config..."
+# ln -sf ~/.dotfiles/nvim ~/.config/
 
 install_nvim_old_conf:
 	@echo "Installing nvim old config..."
-	@echo "[WARN] This config only works for [NVIM 0.7]. To use new config, run 'make install_nvim_conf'".
+	@echo "[WARN] This config only works for [NVIM 0.7]."
 	ln -sf ~/.dotfiles/old/nvim ~/.config/
+
+
+# =================================== dev ===================================
+NVIM_ACTIONS = release reset update upgrade
+# sticking to old conf
+$(NVIM_ACTIONS):
+	cd $(OLD_NVIM_DIR) && ./build.sh $@
+
 
 # ================================ dev (old) ================================
 OLD_NVIM_DIR = old/nvim
-OLD_NVIM_ACTIONS = release reset update upgrade
-OLD_NVIM_TARGETS = $(addprefix old_nvim_,$(OLD_NVIM_ACTIONS))
+OLD_NVIM_TARGETS = $(addprefix old_nvim_,$(NVIM_ACTIONS))
 
 old_nvim_%:
 $(OLD_NVIM_TARGETS): old_nvim_%:

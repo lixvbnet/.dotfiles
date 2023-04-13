@@ -13,7 +13,7 @@ if [ -z "$action" ]; then
 fi
 
 CHAD_URL=https://github.com/NvChad/NvChad.git
-CHAD_PLUGINS=(base46 extensions)
+CHAD_PLUGINS=(base46 extensions nvim-colorizer.lua)
 CHAD_VERSION=$pwd/lua/custom/chadversion.lua
 TMP_NVIM_DIR=/tmp/tmp_nvim/nvim
 
@@ -82,18 +82,18 @@ for subdir in $(ls "$PLUGINS_DIR"); do
         cd $PLUGINS_DIR/$subdir
         # traverse all plugins under current subdir
         for plugin in $(ls); do
-            # skip nvchad plugins
-            if [ "$plugin" = "base46" ] || [ "$plugin" = "extensions" ]; then
-                printf "%-30s = %s\n" "V.${plugin}" "ChadV.${plugin}" >> $PLUGINS_VERSIONS
-                continue
-            fi
-
             d=$PLUGINS_DIR/$subdir/$plugin
             cd $d
             
             # plugin name: replace special characters
             plugin=${plugin//-/_}
             plugin=${plugin//./_}
+
+            # skip nvchad plugins
+            if [ "$plugin" = "base46" ] || [ "$plugin" = "extensions" ] || [ "$plugin" = "nvim_colorizer_lua" ]; then
+                printf "%-30s = %s\n" "V.${plugin}" "ChadV.${plugin}" >> $PLUGINS_VERSIONS
+                continue
+            fi
 
             git_hash=""
             if [ "$action" == "release" ]; then
