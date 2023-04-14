@@ -2,6 +2,7 @@
 	excludesfile = ~/.gitignore
 	legacyheaders = false # >git 1.5
 	quotepath = false
+	autocrlf = input
 
 [user]
 #	name = your name
