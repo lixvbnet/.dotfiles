@@ -15,6 +15,9 @@ alias rm='rm -i'
 alias linguist='enry'
 alias lg='lazygit'
 
+## mitmproxy aliases
+alias mitm='mitmweb --mode upstream:http://127.0.0.1:7890'
+
 ## TMUX ALIASES
 # keep at most 1 client to main, otherwise create new session
 alias tm='tmux list-clients 2>/dev/null | grep -q main && tmux || tmux new -A -s main'
@@ -30,7 +33,10 @@ PATH=$PATH:/usr/local/node/bin
 PATH=$PATH:/usr/local/mysql/bin:/usr/local/mysql/support-files
 export PATH
 
-export JAVA_HOME=/usr/local/java/jdk
+# Default Settings. Override on demand
+#export JAVA_HOME=/usr/local/java/jdk
+export JAVA_HOME=$(/usr/libexec/java_home)
+
 export M2_HOME=/usr/local/maven
 export PATH=$PATH:$M2_HOME/bin
 # export MAVEN_OPTS="-Dmaven.test.skip=true -Dfindbugs.skip=true -Dcheckstyle.skip=true -Dpmd.skip=true"
