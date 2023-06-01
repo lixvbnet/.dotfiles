@@ -19,9 +19,9 @@ alias lg='lazygit'
 ## mitmproxy aliases
 export SYS_PROXY="127.0.0.1:7890"
 export MITM_PROXY="127.0.0.1:8080"
-alias show_proxy='test -n "$https_proxy" && echo $https_proxy; test -n "$http_proxy" && echo $http_proxy; test -n "$all_proxy" && echo $all_proxy'
-alias set_sys_proxy='export https_proxy=http://${SYS_PROXY} http_proxy=http://${SYS_PROXY} all_proxy=socks5://${SYS_PROXY}'
-alias set_mitm_proxy='export https_proxy=http://${MITM_PROXY} http_proxy=http://${MITM_PROXY} all_proxy=socks5://${MITM_PROXY}'
+alias show_proxy='test -n "$http_proxy" && echo $http_proxy; test -n "$https_proxy" && echo $https_proxy; test -n "$all_proxy" && echo $all_proxy'
+alias set_sys_proxy='export http_proxy=http://${SYS_PROXY} https_proxy=http://${SYS_PROXY} all_proxy=socks5://${SYS_PROXY}'
+alias set_mitm_proxy='export http_proxy=http://${MITM_PROXY} https_proxy=http://${MITM_PROXY} all_proxy=socks5://${MITM_PROXY}'
 alias unset_proxy='unset https_proxy http_proxy all_proxy'
 
 alias mitm='mitmweb --mode upstream:http://${SYS_PROXY}'
