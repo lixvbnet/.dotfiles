@@ -32,7 +32,7 @@
 	b = branch
 	c = commit
 	cm = commit -m
-	ca = commit --amend # careful
+	ca = commit --amend --reset-author # careful
 	ac = !git add . && git commit
 	acm = !git add . && git commit -m
 	l = log --graph --all --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %an, %ar%Creset'
