@@ -9,7 +9,7 @@ install: install_bashrc install_vimrc install_tmux_conf install_kitty_conf insta
 install_bashrc:
 	@echo "Installing bashrc..."
 	ln -sf ~/.dotfiles/.bashrc ~/
-	test -f ~/.dotfiles/.bashrc.${os} && ln -sf ~/.dotfiles/.bashrc.${os} ~/ || true
+	test -f ~/.dotfiles/.bashrc.${os}.sh && ln -sf ~/.dotfiles/.bashrc.${os}.sh ~/ || true
 
 install_vimrc:
 	@echo "Installing vimrc..."

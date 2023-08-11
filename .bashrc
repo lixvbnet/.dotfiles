@@ -63,10 +63,10 @@ DISABLE_MAGIC_FUNCTIONS="true"
 
 ################## Source ~/.bashrc.${os}.sh ###################
 os=$(uname | awk '{print tolower($0)}')
-if [ -f ~/.bashrc.${os} ]; then
-    . ~/.bashrc.${os}
+if [ -f ~/.bashrc.${os}.sh ]; then
+    . ~/.bashrc.${os}.sh
 fi
 #################### Source ~/.bashrc.local ####################
-if [ -f ~/.bashrc.local ]; then
-    . ~/.bashrc.local
+if [ -f ~/.bashrc.local.sh ]; then
+    . ~/.bashrc.local.sh
 fi
