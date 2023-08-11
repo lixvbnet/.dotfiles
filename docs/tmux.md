@@ -13,6 +13,8 @@ For Mac Terminal, need first go to Preferences -> Profiles -> Keyboard, check "U
 - ⇧ + up:   `\033[1;2A` 
 - ⇧ + down: `\033[1;2B` 
 
+> **Note**: An easy way to show escape sequences is using `cat` command then press any key combinations. The raw key code will be printed out.
+
 
 
 ### Start tmux when open shell
