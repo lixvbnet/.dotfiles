@@ -15,8 +15,9 @@ start_tumx() {
 
 # open tmux if available
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-  # start tmux if it's not in IDEA or VSCode
+  # start tmux if it's not in IDEA or VSCode, or iTerm2 or kitty
   if [ -z "$INTELLIJ_ENVIRONMENT_READER" ] && [ "$TERMINAL_EMULATOR" != "JetBrains-JediTerm" ] \
+    && [[ ! "$LC_TERMINAL" =~ iTerm2 ]] && [[ ! "$TERM" =~ kitty ]] \
     && [ -z "$VSCODE_CWD" ] && [ "$TERM_PROGRAM" != "vscode" ]; then
     start_tumx
   fi
