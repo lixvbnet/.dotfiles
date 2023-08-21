@@ -45,7 +45,7 @@ export PATH
 
 # Default Settings. Override on demand
 #export JAVA_HOME=/usr/local/java/jdk
-export JAVA_HOME=$(/usr/libexec/java_home)
+export JAVA_HOME=$(/usr/libexec/java_home 2>/dev/null)
 
 export M2_HOME=/usr/local/maven
 export PATH=$PATH:$M2_HOME/bin
