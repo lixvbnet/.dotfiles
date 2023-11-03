@@ -37,7 +37,7 @@ install_ansible_conf:
 	ln -sf ~/.dotfiles/.ansible.example.cfg ~/
 	ln -sf ~/.dotfiles/.ansible_hosts ~/
 
-gitconfig = $(shell git -c core.editor="ls" config --system -e 2>/dev/null)
+gitconfig = $(shell touch /etc/gitconfig; git -c core.editor="ls" config --system -e 2>/dev/null)
 my_gitconfig_absolute = $(HOME)/.dotfiles/etc/gitconfig
 install_git_conf:
 	@echo "Installing git config..."
