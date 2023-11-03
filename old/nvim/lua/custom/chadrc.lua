@@ -15,7 +15,7 @@ M.plugins = {
    remove = {
       "max397574/better-escape.nvim",
       "folke/which-key.nvim",
-      "NvChad/nvterm",
+      "lixvbnet/nvterm",
    },
    options = {
       lspconfig = {

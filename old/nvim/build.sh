@@ -52,7 +52,7 @@ elif [ "$action" == "upgrade" ]; then
     printf "\n---------------- upgrade chad plugins ----------------\n"
     for plugin in "${CHAD_PLUGINS[@]}"; do
         cd $TMP_NVIM_DIR
-        plugin_url=https://github.com/NvChad/${plugin}.git
+        plugin_url=https://github.com/lixvbnet/${plugin}.git
         git clone $plugin_url $TMP_NVIM_DIR/$plugin
         cd $TMP_NVIM_DIR/$plugin
         plugin_git_hash=$(git rev-parse HEAD)

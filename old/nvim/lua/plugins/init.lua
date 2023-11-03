@@ -3,9 +3,9 @@ local plugins = {
    ["nvim-lua/plenary.nvim"] = {},
    ["lewis6991/impatient.nvim"] = {},
    ["wbthomason/packer.nvim"] = {},
-   ["NvChad/extensions"] = {},
+   ["lixvbnet/extensions"] = {},
 
-   ["NvChad/base46"] = {
+   ["lixvbnet/base46"] = {
       after = "plenary.nvim",
       config = function()
          local ok, base46 = pcall(require, "base46")
@@ -16,7 +16,7 @@ local plugins = {
       end,
    },
 
-   ["NvChad/nvterm"] = {
+   ["lixvbnet/nvterm"] = {
       config = function()
          require "plugins.configs.nvterm"
       end,
@@ -50,7 +50,7 @@ local plugins = {
       end,
    },
 
-   ["NvChad/nvim-colorizer.lua"] = {
+   ["lixvbnet/nvim-colorizer.lua"] = {
       event = "BufRead",
       config = function()
          require("plugins.configs.others").colorizer()

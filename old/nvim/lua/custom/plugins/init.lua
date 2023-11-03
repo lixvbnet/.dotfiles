@@ -53,17 +53,13 @@ return {
       commit = V.packer_nvim,
    },
 
-   ["NvChad/extensions"] = {
+   ["lixvbnet/extensions"] = {
       commit = V.extensions,
    },
 
-   ["NvChad/base46"] = {
+   ["lixvbnet/base46"] = {
       commit = V.base46,
    },
-
-   -- ["NvChad/nvterm"] = {
-   --    commit = V.nvterm,
-   -- },
 
    ["kyazdani42/nvim-web-devicons"] = {
       commit = V.nvim_web_devicons,
@@ -84,7 +80,7 @@ return {
       commit = V.indent_blankline_nvim,
    },
 
-   ["NvChad/nvim-colorizer.lua"] = {
+   ["lixvbnet/nvim-colorizer.lua"] = {
       commit = V.nvim_colorizer_lua,
    },
 

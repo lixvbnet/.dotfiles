@@ -27,6 +27,6 @@ local options = {
    enable_new_mappings = true,
 }
 
-options = nvchad.load_override(options, "NvChad/nvterm")
+options = nvchad.load_override(options, "lixvbnet/nvterm")
 
 nvterm.setup(options)

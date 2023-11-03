@@ -93,7 +93,7 @@ M.colorizer = function()
       },
    }
 
-   options = nvchad.load_override(options, "NvChad/nvim-colorizer.lua")
+   options = nvchad.load_override(options, "lixvbnet/nvim-colorizer.lua")
 
    colorizer.setup(options["filetypes"], options["user_default_options"])
    vim.cmd "ColorizerReloadAllBuffers"
