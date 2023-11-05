@@ -45,7 +45,7 @@ export PATH
 
 # Default Settings. Override on demand
 #export JAVA_HOME=$(/usr/libexec/java_home 2>/dev/null)     # deprecated: sometimes very SLOW
-export JAVA_HOME=/usr/local/java/jdk
+#export JAVA_HOME=/usr/local/java/jdk
 
 
 export M2_HOME=/usr/local/maven
@@ -55,7 +55,7 @@ export MAVEN_OPTS="-Dfindbugs.skip=true -Dcheckstyle.skip=true -Dpmd.skip=true"
 
 
 ########################### SETTINGS ###########################
-export NG_CLI_ANALYTICS=ci
+#export NG_CLI_ANALYTICS=ci
 export HOMEBREW_NO_AUTO_UPDATE=true
 # oh-my-zsh settings
 DISABLE_AUTO_UPDATE="true"
