@@ -57,6 +57,7 @@ export MAVEN_OPTS="-Dfindbugs.skip=true -Dcheckstyle.skip=true -Dpmd.skip=true"
 ########################### SETTINGS ###########################
 #export NG_CLI_ANALYTICS=ci
 export HOMEBREW_NO_AUTO_UPDATE=true
+export HOMEBREW_NO_INSTALL_CLEANUP=true
 # oh-my-zsh settings
 DISABLE_AUTO_UPDATE="true"
 DISABLE_MAGIC_FUNCTIONS="true"
