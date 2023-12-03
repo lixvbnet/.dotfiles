@@ -7,7 +7,7 @@ set backspace=2         " more powerful backspacing
 filetype plugin on      " use the file type plugin
 filetype indent on
 
-set expandtab           " Convert Tab to spaces
+"set expandtab           " Convert Tab to spaces
 set smarttab            " Be smart when using Tabs
 set ts=4                " Tab Stop
 set shiftwidth=4        " The width of a Tab
