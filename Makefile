@@ -33,6 +33,7 @@ install_kitty_conf:
 
 install_ansible_conf:
 	@echo "Installing ansible config..."
+	mkdir -p ~/.ansible/roles
 	ln -sf ~/.dotfiles/.ansible.cfg ~/
 	ln -sf ~/.dotfiles/.ansible.example.cfg ~/
 	ln -sf ~/.dotfiles/.ansible_hosts ~/
