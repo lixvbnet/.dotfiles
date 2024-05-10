@@ -14,6 +14,7 @@ alias rm='rm -i'
 
 alias linguist='enry'
 alias lg='lazygit'
+alias lab='jupyter lab -y --notebook-dir=~/Documents/jupyter/'
 
 
 ## mitmproxy aliases
