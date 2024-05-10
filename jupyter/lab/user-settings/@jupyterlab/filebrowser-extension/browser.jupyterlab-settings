@@ -1,0 +1,11 @@
+{
+    "navigateToCurrentDirectory": false,
+    "showFileCheckboxes": false,
+    "showFileSizeColumn": false,
+    "showFullPath": true,
+    "sortNotebooksFirst": true,
+    "useFuzzyFilter": true,
+    "filterDirectories": true,
+    "showLastModifiedColumn": false,
+    "showHiddenFiles": false
+}

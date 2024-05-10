@@ -44,6 +44,8 @@ make install
 
   > [lazygit](https://github.com/jesseduffield/lazygit) config.
 
+- Jupyter
+
 - NVIM
 
   > [NVIM](https://neovim.io/) config.
