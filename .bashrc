@@ -40,6 +40,7 @@ alias tmclear='tmcls && tmux kill-session'
 
 ############################# PATH #############################
 PATH=$PATH:~/bin:~/go/bin:~/.cargo/bin
+PATH=/usr/local/goroot/bin:/usr/local/go/bin:$PATH
 PATH=$PATH:/usr/local/node/bin
 PATH=$PATH:/usr/local/mysql/bin:/usr/local/mysql/support-files
 export PATH
