@@ -54,6 +54,8 @@ export M2_HOME=/usr/local/maven
 export PATH=$PATH:$M2_HOME/bin
 # export MAVEN_OPTS="-Dmaven.test.skip=true -Dfindbugs.skip=true -Dcheckstyle.skip=true -Dpmd.skip=true"
 export MAVEN_OPTS="-Dfindbugs.skip=true -Dcheckstyle.skip=true -Dpmd.skip=true"
+# Disable Python2 httplib SSL/HTTPS Check (Useful for robotframework HttpLibrary.HTTP)
+export PYTHONHTTPSVERIFY=0
 
 
 ########################### SETTINGS ###########################
