@@ -46,6 +46,8 @@ make install
 
 - Jupyter
 
+- Xournal
+
 - NVIM
 
   > [NVIM](https://neovim.io/) config.

@@ -3,7 +3,9 @@ $(info os=$(os))
 
 .PHONY: install clean $(NV_ACTIONS)
 
-install: install_bashrc install_vimrc install_tmux_conf install_kitty_conf install_ansible_conf install_git_conf install_lazygit_conf install_jupyter_lab_user_settings install_nvim_old_conf
+install: install_bashrc install_vimrc install_tmux_conf install_kitty_conf install_ansible_conf install_git_conf \
+		install_lazygit_conf install_jupyter_lab_user_settings install_xournal_config \
+		install_nvim_old_conf
 
 
 install_bashrc:
@@ -58,6 +60,11 @@ install_jupyter_lab_user_settings:
 	mkdir -p ~/.jupyter/lab
 	rm -rf ~/.jupyter/lab/user-settings
 	ln -sf ~/.dotfiles/jupyter/lab/user-settings ~/.jupyter/lab/
+
+install_xournal_config:
+	@echo "Installing xournal config..."
+	mkdir -p ~/.xournal
+	ln -sf ~/.dotfiles/xournal/config ~/.xournal/
 
 # sticking to old conf
 install_nvim_conf: install_nvim_old_conf
