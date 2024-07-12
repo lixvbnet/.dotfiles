@@ -65,6 +65,8 @@ export HOMEBREW_NO_INSTALL_CLEANUP=true
 # oh-my-zsh settings
 DISABLE_AUTO_UPDATE="true"
 DISABLE_MAGIC_FUNCTIONS="true"
+# disable pip version check
+export PIP_DISABLE_PIP_VERSION_CHECK=1
 
 
 ################## Source ~/.bashrc.${os}.sh ###################
