@@ -56,6 +56,8 @@ export PATH=$PATH:$M2_HOME/bin
 export MAVEN_OPTS="-Dfindbugs.skip=true -Dcheckstyle.skip=true -Dpmd.skip=true"
 # Disable Python2 httplib SSL/HTTPS Check (Useful for robotframework HttpLibrary.HTTP)
 export PYTHONHTTPSVERIFY=0
+# Disable Dict2Anki requests SSL/HTTPS Check (Useful for debugging)
+#export DICT2ANKI_SSL_VERIFY=0
 
 
 ########################### SETTINGS ###########################
