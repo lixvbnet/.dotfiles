@@ -2,6 +2,8 @@
 
 #alias ls='ls -G'
 
+export PATH="$PATH:/Applications/010 Editor.app/Contents/CmdLine"
+
 
 ################# TMUX (SHOULD BE PUT AT LAST) #################
 start_tumx() {
