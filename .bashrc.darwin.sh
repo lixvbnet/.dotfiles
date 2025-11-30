@@ -1,12 +1,12 @@
 ## This file contains OS spefic settings for MacOS
 
-#alias ls='ls -G'
+alias ls='ls -G'
 
 export PATH="$PATH:/Applications/010 Editor.app/Contents/CmdLine"
 
 
 ################# TMUX (SHOULD BE PUT AT LAST) #################
-start_tumx() {
+start_tmux() {
   # env > ~/env.txt
   if tmux list-clients 2>/dev/null | grep -q "main"; then
     exec tmux
@@ -21,7 +21,7 @@ if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] &&
   if [ -z "$INTELLIJ_ENVIRONMENT_READER" ] && [ "$TERMINAL_EMULATOR" != "JetBrains-JediTerm" ] \
     && [[ ! "$LC_TERMINAL" =~ iTerm2 ]] && [[ ! "$TERM" =~ kitty ]] \
     && [ -z "$VSCODE_CWD" ] && [ "$TERM_PROGRAM" != "vscode" ]; then
-    start_tumx
+    start_tmux
   fi
 fi
 
@@ -36,6 +36,6 @@ fi
 ## for apple terminal, only start tmux if os version < 13
 # if [[ "$TERM_PROGRAM" =~ "Apple" ]]; then
 #     if [[ $(sw_vers -productVersion | cut -d. -f1) -lt 13 ]]; then
-#       start_tumx
+#       start_tmux
 #     fi
 # fi

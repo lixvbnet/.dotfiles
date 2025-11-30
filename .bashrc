@@ -6,7 +6,8 @@ LANG="en_US.UTF-8"
 
 ############################ ALIAS #############################
 alias cls='clear'
-alias ll='ls -l'
+alias ls='ls --color=auto'
+alias ll='ls -lh'
 alias la='ls -a'
 alias lla='ls -al'
 alias grep='grep --color'
@@ -40,7 +41,7 @@ alias tmclear='tmcls && tmux kill-session'
 
 ############################# PATH #############################
 PATH=$PATH:~/bin:~/go/bin:~/.cargo/bin
-PATH=/usr/local/goroot/bin:/usr/local/go/bin:$PATH
+PATH=/usr/local/go/bin:$PATH
 PATH=$PATH:/usr/local/node/bin
 PATH=$PATH:/usr/local/mysql/bin:/usr/local/mysql/support-files
 export PATH
@@ -70,7 +71,7 @@ DISABLE_MAGIC_FUNCTIONS="true"
 # disable pip version check
 export PIP_DISABLE_PIP_VERSION_CHECK=1
 # enable docker buildkit
-DOCKER_BUILDKIT=1
+export DOCKER_BUILDKIT=1
 
 
 ################## Source ~/.bashrc.${os}.sh ###################
