@@ -11,6 +11,9 @@
 #         unstagedChangesColor:
 #             - pink
 
+gui:
+    language: 'en'
+
 update:
     method: never
 
