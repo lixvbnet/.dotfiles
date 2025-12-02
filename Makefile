@@ -55,8 +55,8 @@ LAZYGIT_CONF_DIR_MAC = ~/Library/"Application Support"/lazygit/
 LAZYGIT_CONF_DIR_LINUX = ~/.config/lazygit/
 install_lazygit_conf:
 	@echo "Installing lazygit config..."
-	@test -d $(LAZYGIT_CONF_DIR_MAC) && echo $(LAZYGIT_CONF_DIR_MAC) && ln -sf ~/.dotfiles/lazygit/config.yml $(LAZYGIT_CONF_DIR_MAC)/ || true
-	@test -d $(LAZYGIT_CONF_DIR_LINUX) && echo $(LAZYGIT_CONF_DIR_LINUX) && ln -sf ~/.dotfiles/lazygit/config.yml $(LAZYGIT_CONF_DIR_LINUX)/ || true
+	@[ "$(os)" = "darwin" ] && mkdir -p $(LAZYGIT_CONF_DIR_MAC) && echo $(LAZYGIT_CONF_DIR_MAC) && ln -sf ~/.dotfiles/lazygit/config.yml $(LAZYGIT_CONF_DIR_MAC)/ || true
+	@[ "$(os)" = "linux" ] && mkdir -p $(LAZYGIT_CONF_DIR_LINUX) && echo $(LAZYGIT_CONF_DIR_LINUX) && ln -sf ~/.dotfiles/lazygit/config.yml $(LAZYGIT_CONF_DIR_LINUX)/ || true
 
 install_jupyter_lab_user_settings:
 	@echo "Installing jupyter lab user settings..."

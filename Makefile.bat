@@ -3,8 +3,17 @@
 @REM echo "Current dir: %cd%"
 @REM echo "User home: %userprofile%"
 echo "==================================================="
+@echo "Preparation..."
+set dirname=%userprofile%\.config
+if not exist "%dirname%" (
+    @echo "create directory %dirname%"
+    mkdir "%dirname%"
+)
 
+echo.
+echo.
 
+echo "==================================================="
 set filename=.bashrc
 @echo "Installing %filename%..."
 set link=%userprofile%\%filename%
@@ -59,6 +68,27 @@ if exist "%link%" (
     del "%link%"
 )
 mklink "%link%" "%cd%\etc\%filename%"
+
+
+echo.
+
+:: Lazygit config stores in following location in Windows
+set dirname=%LOCALAPPDATA%\lazygit
+set filename=config.yml
+@echo "Installing lazygit %filename%..."
+if not exist "%dirname%" (
+    @echo "create directory %dirname%"
+    mkdir "%dirname%"
+)
+set link=%dirname%\%filename%
+if exist "%link%" (
+    @echo "delete existing."
+    del "%link%"
+)
+mklink "%link%" "%cd%\lazygit\%filename%"
+
+
+
 
 echo.
 echo Done!
