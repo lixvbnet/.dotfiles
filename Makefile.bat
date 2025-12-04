@@ -25,6 +25,17 @@ mklink "%link%" "%cd%\%filename%"
 
 echo.
 
+@REM set filename=.bashrc.windows.sh
+@REM @echo "Installing %filename%..."
+@REM set link=%userprofile%\%filename%
+@REM if exist "%link%" (
+@REM     @echo "delete existing."
+@REM     del "%link%"
+@REM )
+@REM mklink "%link%" "%cd%\%filename%"
+
+@REM echo.
+
 set filename=.bash_profile
 @echo "Installing %filename%..."
 set link=%userprofile%\%filename%

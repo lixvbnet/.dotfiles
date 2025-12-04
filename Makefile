@@ -1,11 +1,16 @@
 os = $(shell uname | awk '{print tolower($$0)}')
+ifeq ($(findstring mingw,$(os)),mingw)
+  os := windows
+endif
 $(info os=$(os))
 
-.PHONY: install clean $(NV_ACTIONS)
-
-install: before_install install_bashrc install_vimrc install_tmux_conf install_kitty_conf install_ansible_conf install_git_conf \
+ACTIONS=before_install install_bashrc install_vimrc install_tmux_conf install_kitty_conf install_ansible_conf install_git_conf \
 		install_lazygit_conf install_jupyter_lab_user_settings install_xournal_config \
 		install_nvim_old_conf
+
+.PHONY: install clean $(ACTIONS)
+
+install: $(ACTIONS)
 
 before_install:
 	mkdir -p ~/.config

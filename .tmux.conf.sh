@@ -1,5 +1,8 @@
 _uname_s=$(uname -s)
 os=$(uname | awk '{print tolower($0)}')
+if [[ $os == mingw* ]]; then
+    os="windows"
+fi
 
 _apply_configuration() {
   file=~/.tmux.conf.${os}

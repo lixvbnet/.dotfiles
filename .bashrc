@@ -76,6 +76,9 @@ export DOCKER_BUILDKIT=1
 
 ################## Source ~/.bashrc.${os}.sh ###################
 os=$(uname | awk '{print tolower($0)}')
+if [[ $os == mingw* ]]; then
+    os="windows"
+fi
 if [ -f ~/.bashrc.${os}.sh ]; then
     . ~/.bashrc.${os}.sh
 fi
