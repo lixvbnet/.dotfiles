@@ -66,6 +66,7 @@ export PYTHONHTTPSVERIFY=0
 
 
 ########################### SETTINGS ###########################
+export NO_PROXY="localhost,127.0.0.1,127.0.0.0/8,::1,*.local,0.0.0.0"
 #export NG_CLI_ANALYTICS=ci
 export HOMEBREW_NO_AUTO_UPDATE=true
 export HOMEBREW_NO_INSTALL_CLEANUP=true
