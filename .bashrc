@@ -3,10 +3,14 @@
 ## Custom settings should be put into ~/.bashrc.local
 LANG="en_US.UTF-8"
 
+os=$(uname | awk '{print tolower($0)}')
+if [[ $os == mingw* ]]; then
+    os="windows"
+fi
+
 
 ############################ ALIAS #############################
 alias cls='clear'
-alias ls='ls --color=auto'
 alias ll='ls -lh'
 alias la='ls -a'
 alias lla='ls -al'
@@ -74,11 +78,23 @@ export PIP_DISABLE_PIP_VERSION_CHECK=1
 export DOCKER_BUILDKIT=1
 
 
+########################## UTILITIES ###########################
+showvenvs() {
+    venv_dir=~/.local/share/virtualenvs
+    if [ "${os}" = "windows" ]; then
+        venv_dir=~/.virtualenvs
+    fi
+    echo "${venv_dir}"
+    echo "----------------------------"
+    test -n "${venv_dir}" && ls -l "${venv_dir}"
+}
+# Clear Python pipenv virtual environments
+clearvenvs() {
+    showvenvs && printf '\nClear all venvs...\n' && rm -rf "${venv_dir}"/*
+}
+
+
 ################## Source ~/.bashrc.${os}.sh ###################
-os=$(uname | awk '{print tolower($0)}')
-if [[ $os == mingw* ]]; then
-    os="windows"
-fi
 if [ -f ~/.bashrc.${os}.sh ]; then
     . ~/.bashrc.${os}.sh
 fi
