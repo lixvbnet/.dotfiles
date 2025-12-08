@@ -4,8 +4,8 @@ alias ls='ls -G'
 
 export PATH="$PATH:/Applications/010 Editor.app/Contents/CmdLine"
 
-# fix pipenv SSL cert issue in MacOS
-command -v python3 &> /dev/null && export REQUESTS_CA_BUNDLE=$(python3 -m certifi) &> /dev/null || true
+## fix pipenv SSL cert issue in MacOS -- After upgrading to Python12, the issue seems gone.
+#command -v python3 &> /dev/null && export REQUESTS_CA_BUNDLE=$(python3 -m certifi) &> /dev/null || true
 
 
 ################# TMUX (SHOULD BE PUT AT LAST) #################
