@@ -28,10 +28,10 @@ See [.bashrc](../.bashrc) and [.bashrc.darwin](../.bashrc.darwin) in this repo.
 > A workaround to read output messages of click-and-run scripts is to append following lines in those scripts:
 >
 > ```shell
-> if [ -n "$TMUX" ]; then
+> #if [ -n "$TMUX" ]; then
 > echo
 > read -n 1 -s -r -p "Press any key to continue..."
-> fi
+> #fi
 > ```
 
 - Approach 2 (won't affect shell script)
