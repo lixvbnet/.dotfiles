@@ -1,7 +1,8 @@
 ## This file contains common settings for both MacOS and Linux
-## OS spefic settings should be put into ~/.bashrc.{darwin|linux}
+## OS specific settings should be put into ~/.bashrc.{darwin|linux}
 ## Custom settings should be put into ~/.bashrc.local
 LANG="en_US.UTF-8"
+export lc_messages=C
 
 os=$(uname | awk '{print tolower($0)}')
 if [[ $os == mingw* ]]; then
