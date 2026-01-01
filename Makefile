@@ -4,6 +4,15 @@ ifeq ($(findstring mingw,$(os)),mingw)
 endif
 $(info os=$(os))
 
+# If in Windows, run Makefile.bat instead.
+ifeq ($(os),windows)
+$(info Running Makefile.bat instead.)
+.DEFAULT_GOAL := run-batch		# any target name
+%:								# take over all targets
+	cmd //c "Makefile.bat $(MAKECMDGOALS)"
+else
+# Unix targets
+
 ACTIONS=before_install install_bashrc install_vimrc install_tmux_conf install_kitty_conf install_ansible_conf install_git_conf \
 		install_lazygit_conf install_jupyter_lab_user_settings install_xournal_config \
 		install_nvim_old_conf
@@ -112,3 +121,6 @@ clean_nvim_conf:
 	rm -rf ~/.config/nvim
 	rm -rf ~/.local/share/nvim
 	rm -rf ~/.cache/nvim
+
+
+endif

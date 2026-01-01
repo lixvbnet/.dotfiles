@@ -1,5 +1,8 @@
 @echo off
+set TARGET=%1
 
+echo "==================================================="
+echo "TARGET: %TARGET%"
 @REM echo "Current dir: %cd%"
 @REM echo "User home: %userprofile%"
 echo "==================================================="
@@ -25,16 +28,16 @@ mklink "%link%" "%cd%\%filename%"
 
 echo.
 
-@REM set filename=.bashrc.windows.sh
-@REM @echo "Installing %filename%..."
-@REM set link=%userprofile%\%filename%
-@REM if exist "%link%" (
-@REM     @echo "delete existing."
-@REM     del "%link%"
-@REM )
-@REM mklink "%link%" "%cd%\%filename%"
+set filename=.bashrc.windows.sh
+@echo "Installing %filename%..."
+set link=%userprofile%\%filename%
+if exist "%link%" (
+    @echo "delete existing."
+    del "%link%"
+)
+mklink "%link%" "%cd%\%filename%"
 
-@REM echo.
+echo.
 
 set filename=.bash_profile
 @echo "Installing %filename%..."
@@ -104,4 +107,4 @@ mklink "%link%" "%cd%\lazygit\%filename%"
 echo.
 echo Done!
 
-PAUSE
+::PAUSE
