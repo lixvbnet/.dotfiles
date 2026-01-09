@@ -21,6 +21,7 @@ alias rm='rm -i'
 alias linguist='enry'
 alias lg='lazygit'
 alias lab='jupyter lab -y --notebook-dir=~/Documents/jupyter/'
+alias uvsh='source .venv/bin/activate'
 
 
 ## mitmproxy aliases
