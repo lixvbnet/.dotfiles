@@ -82,19 +82,19 @@ export DOCKER_BUILDKIT=1
 
 
 ########################## UTILITIES ###########################
-showvenvs() {
-    venv_dir=~/.local/share/virtualenvs
-    if [ "${os}" = "windows" ]; then
-        venv_dir=~/.virtualenvs
-    fi
-    echo "${venv_dir}"
-    echo "----------------------------"
-    test -n "${venv_dir}" && ls -l "${venv_dir}"
-}
-# Clear Python pipenv virtual environments
-clearvenvs() {
-    showvenvs && printf '\nClear all venvs...\n' && rm -rf "${venv_dir}"/*
-}
+# showvenvs() {
+#     venv_dir=~/.local/share/virtualenvs
+#     if [ "${os}" = "windows" ]; then
+#         venv_dir=~/.virtualenvs
+#     fi
+#     echo "${venv_dir}"
+#     echo "----------------------------"
+#     test -n "${venv_dir}" && ls -l "${venv_dir}"
+# }
+# # Clear Python pipenv virtual environments
+# clearvenvs() {
+#     showvenvs && printf '\nClear all venvs...\n' && rm -rf "${venv_dir}"/*
+# }
 
 
 ################## Source ~/.bashrc.${os}.sh ###################
