@@ -76,7 +76,7 @@ echo.
 :: Hardcode the path here
 set filename=gitconfig
 @echo "Installing %filename%..."
-set link=C:\Program Files\Git\etc\%filename%
+set link=D:\Program Files\Git\etc\%filename%
 if exist "%link%" (
     @echo "delete existing."
     del "%link%"
