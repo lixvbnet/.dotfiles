@@ -79,6 +79,8 @@ DISABLE_MAGIC_FUNCTIONS="true"
 export PIP_DISABLE_PIP_VERSION_CHECK=1
 # enable docker buildkit
 export DOCKER_BUILDKIT=1
+# AWS
+export AWS_DEFAULT_REGION=eu-west-1
 
 
 ########################## UTILITIES ###########################
