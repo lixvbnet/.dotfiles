@@ -81,6 +81,7 @@ export PIP_DISABLE_PIP_VERSION_CHECK=1
 export DOCKER_BUILDKIT=1
 # AWS
 export AWS_DEFAULT_REGION=eu-west-1
+export AWS_PAGER=""
 
 
 ########################## UTILITIES ###########################
