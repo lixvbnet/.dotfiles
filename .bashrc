@@ -79,9 +79,15 @@ DISABLE_MAGIC_FUNCTIONS="true"
 export PIP_DISABLE_PIP_VERSION_CHECK=1
 # enable docker buildkit
 export DOCKER_BUILDKIT=1
+
 # AWS
 export AWS_DEFAULT_REGION=eu-west-1
 export AWS_PAGER=""
+
+## LocalStack
+export LOCALSTACK_HOST=localhost
+# The awslocal is still using aws-cli v1, and its python script has path issues in Windows. So simply use the alias instead.
+alias awslocal="AWS_ACCESS_KEY_ID=test AWS_SECRET_ACCESS_KEY=test aws --endpoint-url=http://${LOCALSTACK_HOST:-localhost}:4566"
 
 
 ########################## UTILITIES ###########################
