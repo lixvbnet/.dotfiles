@@ -83,6 +83,8 @@ export DOCKER_BUILDKIT=1
 # AWS
 export AWS_DEFAULT_REGION=eu-west-1
 export AWS_PAGER=""
+# ensure aws cli not using proxy
+alias aws='env -u http_proxy -u https_proxy -u all_proxy aws'
 
 ## LocalStack
 export LOCALSTACK_HOST=localhost
