@@ -77,6 +77,8 @@ DISABLE_AUTO_UPDATE="true"
 DISABLE_MAGIC_FUNCTIONS="true"
 # disable pip version check
 export PIP_DISABLE_PIP_VERSION_CHECK=1
+# disable CircleCI CLI telemetry
+export CIRCLECI_CLI_TELEMETRY_OPTOUT=1
 # enable docker buildkit
 export DOCKER_BUILDKIT=1
 
