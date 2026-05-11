@@ -68,7 +68,7 @@ export PYTHONHTTPSVERIFY=0
 
 
 ########################### SETTINGS ###########################
-export NO_PROXY="localhost,127.0.0.1,127.0.0.0/8,::1,*.local,0.0.0.0"
+export NO_PROXY="localhost,127.0.0.1,127.0.0.0/8,::1,.local,0.0.0.0,.amazonaws.com,.circleci.com"
 #export NG_CLI_ANALYTICS=ci
 export HOMEBREW_NO_AUTO_UPDATE=true
 export HOMEBREW_NO_INSTALL_CLEANUP=true
@@ -85,8 +85,8 @@ export DOCKER_BUILDKIT=1
 # AWS
 export AWS_DEFAULT_REGION=eu-west-1
 export AWS_PAGER=""
-# ensure aws cli not using proxy
-alias aws='env -u http_proxy -u https_proxy -u all_proxy aws'
+# ensure aws cli not using proxy (no longer needed since .amazonaws.com has been added to NO_PROXY)
+# alias aws='env -u http_proxy -u https_proxy -u all_proxy aws'
 
 ## LocalStack
 export LOCALSTACK_HOST=localhost
