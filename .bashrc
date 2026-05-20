@@ -84,6 +84,7 @@ export DOCKER_BUILDKIT=1
 
 # AWS
 export AWS_DEFAULT_REGION=eu-west-1
+export AWS_REGION=$AWS_DEFAULT_REGION
 export AWS_PAGER=""
 # ensure aws cli not using proxy (no longer needed since .amazonaws.com has been added to NO_PROXY)
 # alias aws='env -u http_proxy -u https_proxy -u all_proxy aws'
