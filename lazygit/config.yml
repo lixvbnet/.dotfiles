@@ -11,6 +11,9 @@
 #         unstagedChangesColor:
 #             - pink
 
+git:
+    autoFetch: false
+
 gui:
     language: 'en'
 
